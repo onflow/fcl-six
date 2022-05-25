@@ -7,31 +7,32 @@ const DEPS = new Set([
 
 export const TITLE = "Create Machine Account"
 export const DESCRIPTION = "Creates a Machine Account for node held in Staking Collection."
-export const VERSION = "0.0.2"
-export const HASH = "55ca5fe85d9b09aa9ab9fbaf3a2618d0cc5f23f5ad37b5bf045c022cd9058c27"
+export const VERSION = "0.0.3"
+export const HASH = "dd3b327b09087ea7f8e92a22a6b04a3c6ca33b868b430c4f15f251658c38c1b7"
 export const CODE = 
-`import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+`import Crypto
+import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Creates a machine account for a node that is already in the staking collection
 /// and adds public keys to the new account
 
-transaction(nodeID: String, publicKeys: [String]) {
+transaction(nodeID: String, publicKeys: [Crypto.KeyListEntry]) {
     
     let stakingCollectionRef: &FlowStakingCollection.StakingCollection
 
     prepare(account: AuthAccount) {
         self.stakingCollectionRef = account.borrow<&FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic("Could not borrow ref to StakingCollection")
+            ?? panic(\"Could not borrow ref to StakingCollection\")
 
         if let machineAccount = self.stakingCollectionRef.createMachineAccountForExistingNode(nodeID: nodeID, payer: account) {
             if publicKeys == nil || publicKeys!.length == 0 {
-                panic("Cannot provide zero keys for the machine account")
+                panic(\"Cannot provide zero keys for the machine account\")
             }
-            for key in publicKeys! {
-                machineAccount.addPublicKey(key.decodeHex())
+            for key in publicKeys {
+                machineAccount.keys.add(publicKey: key.publicKey, hashAlgorithm: key.hashAlgorithm, weight: key.weight)
             }
         } else {
-            panic("Could not create a machine account for the node")
+            panic(\"Could not create a machine account for the node\")
         }
     }
 }

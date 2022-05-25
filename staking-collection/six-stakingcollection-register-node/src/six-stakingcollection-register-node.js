@@ -7,10 +7,11 @@ const DEPS = new Set([
 
 export const TITLE = "Register Node"
 export const DESCRIPTION = "Register a node held in a Staking Collection."
-export const VERSION = "0.0.4"
-export const HASH = "9d9eb5c942e14816f5146f207d8a36e3e4c059731d1909fefa3dcbcdee77c305"
+export const VERSION = "0.0.5"
+export const HASH = "79de7119aea61bdafb39cc3d1f4fa17ca802c2732726a86d2c636dbc19808b68"
 export const CODE = 
-`import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+`import Crypto
+import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Registers a delegator in the staking collection resource
 /// for the specified node information and the amount of tokens to commit
@@ -21,13 +22,13 @@ transaction(id: String,
             networkingKey: String,
             stakingKey: String,
             amount: UFix64,
-            publicKeys: [String]?) {
+            publicKeys: [Crypto.KeyListEntry]?) {
     
     let stakingCollectionRef: &FlowStakingCollection.StakingCollection
 
     prepare(account: AuthAccount) {
         self.stakingCollectionRef = account.borrow<&FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic("Could not borrow ref to StakingCollection")
+            ?? panic(\"Could not borrow ref to StakingCollection\")
 
         if let machineAccount = self.stakingCollectionRef.registerNode(
             id: id,
@@ -39,10 +40,10 @@ transaction(id: String,
             payer: account) 
         {
             if publicKeys == nil || publicKeys!.length == 0 {
-                panic("Cannot provide zero keys for the machine account")
+                panic(\"Cannot provide zero keys for the machine account\")
             }
             for key in publicKeys! {
-                machineAccount.addPublicKey(key.decodeHex())
+                machineAccount.keys.add(publicKey: key.publicKey, hashAlgorithm: key.hashAlgorithm, weight: key.weight)
             }
         }
     }
