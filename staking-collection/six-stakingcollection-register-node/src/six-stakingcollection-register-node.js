@@ -28,7 +28,7 @@ transaction(id: String,
 
     prepare(account: AuthAccount) {
         self.stakingCollectionRef = account.borrow<&FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic(\"Could not borrow ref to StakingCollection\")
+            ?? panic("Could not borrow ref to StakingCollection")
 
         if let machineAccount = self.stakingCollectionRef.registerNode(
             id: id,
@@ -40,7 +40,7 @@ transaction(id: String,
             payer: account) 
         {
             if publicKeys == nil || publicKeys!.length == 0 {
-                panic(\"Cannot provide zero keys for the machine account\")
+                panic("Cannot provide zero keys for the machine account")
             }
             for key in publicKeys! {
                 machineAccount.keys.add(publicKey: key.publicKey, hashAlgorithm: key.hashAlgorithm, weight: key.weight)
