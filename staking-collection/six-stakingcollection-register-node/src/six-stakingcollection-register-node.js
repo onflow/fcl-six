@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Register Node"
 export const DESCRIPTION = "Register a node held in a Staking Collection."
-export const VERSION = "0.0.5"
+export const VERSION = "0.0.6"
 export const HASH = "888e40ddf906f8194d6fe2d7675db4fb0e7c1d87a9b4796df4df68ca0559601e"
 export const CODE = 
 `import Crypto
