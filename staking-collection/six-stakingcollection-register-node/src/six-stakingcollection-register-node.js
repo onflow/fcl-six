@@ -8,7 +8,7 @@ const DEPS = new Set([
 export const TITLE = "Register Node"
 export const DESCRIPTION = "Register a node held in a Staking Collection."
 export const VERSION = "0.0.5"
-export const HASH = "79de7119aea61bdafb39cc3d1f4fa17ca802c2732726a86d2c636dbc19808b68"
+export const HASH = "888e40ddf906f8194d6fe2d7675db4fb0e7c1d87a9b4796df4df68ca0559601e"
 export const CODE = 
 `import Crypto
 import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
