@@ -1,6 +1,6 @@
 import * as fcl from "@onflow/fcl";
 import { t, config } from "@onflow/fcl";
-import { decode } from "rlp";
+import { decode } from "@onflow/rlp";
 
 const PUBLIC_KEY = 0;
 const SIG_ALGO = 1;
