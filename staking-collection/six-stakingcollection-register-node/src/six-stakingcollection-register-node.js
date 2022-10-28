@@ -92,14 +92,13 @@ export const template = async ({ proposer, authorization, payer, nodeID = "", no
         return {
             keyIndex: 0,
             publicKey: {
-                publicKey: [...values[PUBLIC_KEY].map(v => v)],
+                publicKey: Array.from((values[PUBLIC_KEY].map(v => v))),
                 signatureAlgorithm: cryptoToRuntimeSigningAlgorithm(parseInt(values[SIG_ALGO]?.toString("hex"), 16))
             },
             hashAlgorithm: parseInt(values[HASH_ALGO]?.toString("hex"), 16),
             weight: `${parseInt(values[WEIGHT]?.toString("hex"), 16) + ".0"}`,
             isRevoked: false
         }
-
     });
 
     return fcl.pipe([
