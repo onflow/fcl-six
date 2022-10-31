@@ -25,7 +25,6 @@ transaction(id: String,
             networkingAddress: String,
             networkingKey: String,
             stakingKey: String,
-            stakingKeyPoP: String,
             amount: UFix64,
             publicKeys: [Crypto.KeyListEntry]?) {
     
@@ -41,7 +40,6 @@ transaction(id: String,
             networkingAddress: networkingAddress,
             networkingKey: networkingKey,
             stakingKey: stakingKey,
-            stakingKeyPoP: stakingKeyPoP,
             amount: amount,
             payer: account) 
         {
@@ -84,7 +82,7 @@ const cryptoToRuntimeSigningAlgorithm = (cryptoSigningAlgorithm) => {
     }
 }
 
-export const template = async ({ proposer, authorization, payer, nodeID = "", nodeRole = "", networkingAddress = "", networkingKey = "", stakingKey = "", stakingKeyPop = "", amount = "", publicKeys = [] }) => {
+export const template = async ({ proposer, authorization, payer, nodeID = "", nodeRole = "", networkingAddress = "", networkingKey = "", stakingKey = "", amount = "", publicKeys = [] }) => {
     for (let addr of DEPS) await addressCheck(addr)
 
     const decodedPublicKeys = (publicKeys || []).map(pk => {
@@ -109,7 +107,6 @@ export const template = async ({ proposer, authorization, payer, nodeID = "", no
             fcl.arg(networkingAddress, t.String),
             fcl.arg(networkingKey, t.String),
             fcl.arg(stakingKey, t.String),
-            fcl.arg(stakingKeyPop, t.String),
             fcl.arg(amount, t.UFix64),
             fcl.arg(
                 decodedPublicKeys.map((pk) => ({
