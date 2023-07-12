@@ -1,0 +1,14 @@
+{ 
+  "workspaces": [
+    "./six-*",
+    "./staking-collection",
+    "./topshot",
+    "./usdc"
+  ],
+  "scripts": {
+    "changeset": "changeset"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
+  }
+}
