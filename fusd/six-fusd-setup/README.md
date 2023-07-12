@@ -41,7 +41,7 @@ fcl.config()
   .put("0xFUSDADDRESS", "0xe223d8a629e49c68")
 ```
 
-Learn more about configuring FCL here: https://github.com/onflow/flow-js-sdk/blob/master/docs/configure-fcl.mdx
+Learn more about configuring FCL here: https://github.com/onflow/fcl-six/blob/master/docs/configure-fcl.mdx
 
 # Usage:
 

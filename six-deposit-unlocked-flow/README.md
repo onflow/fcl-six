@@ -44,7 +44,7 @@ fcl.config()
   .put("0xLOCKEDTOKENADDRESS", "0x95e019a17d0e23d7")
 ```
 
-Learn more about configuring FCL here: https://github.com/onflow/flow-js-sdk/blob/master/docs/configure-fcl.mdx
+Learn more about configuring FCL here: https://github.com/onflow/fcl-six/blob/master/docs/configure-fcl.mdx
 
 # Usage:
 

@@ -33,7 +33,7 @@ transaction(nodeID: String, delegatorID: UInt32?, amount: UFix64) {
 
 class UndefinedConfigurationError extends Error {
     constructor(address) {
-      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/flow-js-sdk/blob/master/six/six-withdraw-unstaked-flow/README.md`.trim()
+      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/fcl-six/blob/master/six/six-withdraw-unstaked-flow/README.md`.trim()
       super(msg)
       this.name = "Stored Interaction Undefined Address Configuration Error"
     }

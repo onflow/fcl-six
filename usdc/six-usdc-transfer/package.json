@@ -7,10 +7,10 @@
   "homepage": "https://onflow.org",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/onflow/flow-js-sdk.git"
+    "url": "git+ssh://git@github.com/onflow/fcl-six.git"
   },
   "bugs": {
-    "url": "https://github.com/onflow/flow-js-sdk/issues"
+    "url": "https://github.com/onflow/fcl-six/issues"
   },
   "jest": {
     "transform": {
@@ -35,8 +35,8 @@
     "start": "microbundle watch"
   },
   "peerDependencies": {
-    "@onflow/config": ">=0.0.2",
-    "@onflow/fcl": ">=0.0.70",
-    "@onflow/types": ">=0.0.4"
+    "@onflow/config": ">=1.1.0",
+    "@onflow/fcl": ">=1.4.0 || >=1.5.0",
+    "@onflow/types": ">=1.1.0"
   }
 }
