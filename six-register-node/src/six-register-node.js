@@ -56,7 +56,7 @@ transaction(id: String, role: UInt8, networkingAddress: String, networkingKey: S
 
 class UndefinedConfigurationError extends Error {
     constructor(address) {
-      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/fcl-six/blob/master/six/six-register-node/README.md`.trim()
+      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/fcl-six/blob/main/six-register-node/README.md`.trim()
       super(msg)
       this.name = "Stored Interaction Undefined Address Configuration Error"
     }

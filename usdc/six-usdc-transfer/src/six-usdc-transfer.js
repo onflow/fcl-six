@@ -46,7 +46,7 @@ transaction(amount: UFix64, to: Address) {
 
 class UndefinedConfigurationError extends Error {
     constructor(address) {
-      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/fcl-six/blob/master/six/six-delegate-new-locked-flow/README.md`.trim()
+      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/fcl-six/blob/main/six-delegate-new-locked-flow/README.md`.trim()
       super(msg)
       this.name = "Stored Interaction Undefined Address Configuration Error"
     }
