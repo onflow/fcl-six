@@ -1,9 +1,9 @@
 {
   "workspaces": [
-    "./six-*/*",
-    "./staking-collection/*",
-    "./topshot/*",
-    "./usdc/*"
+    "./six-*",
+    "./staking-collection/six-*",
+    "./topshot/six-*",
+    "./usdc/six-*"
   ],
   "scripts": {
     "build": "lerna run build",
