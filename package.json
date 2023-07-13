@@ -1,14 +1,19 @@
-{ 
+{
   "workspaces": [
-    "./six-*",
-    "./staking-collection",
-    "./topshot",
-    "./usdc"
+    "./six-*/*",
+    "./staking-collection/*",
+    "./topshot/*",
+    "./usdc/*"
   ],
   "scripts": {
-    "changeset": "changeset"
+    "build": "lerna run build",
+    "changeset": "changeset",
+    "release": "npm run build && npm run changeset publish"
   },
   "dependencies": {
     "@changesets/cli": "^2.26.2"
+  },
+  "devDependencies": {
+    "lerna": "^7.1.3"
   }
 }
