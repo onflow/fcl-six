@@ -41,7 +41,7 @@ fcl.config()
   .put("0xUSDCADDRESS", "0x1ab3c177460e1e4a")
 ```
 
-Learn more about configuring FCL here: https://github.com/onflow/flow-js-sdk/blob/master/docs/configure-fcl.mdx
+Learn more about configuring FCL here: https://github.com/onflow/fcl-six/blob/master/docs/configure-fcl.mdx
 
 # Usage:
 

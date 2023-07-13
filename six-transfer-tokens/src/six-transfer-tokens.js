@@ -29,7 +29,7 @@ getAccount(to)
 
 class UndefinedConfigurationError extends Error {
     constructor(address) {
-      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/flow-js-sdk/blob/master/six/six-transfer-tokens/README.md`.trim()
+      const msg = `Stored Interaction Error: Missing configuration for ${address}. Please see the following to learn more: https://github.com/onflow/fcl-six/blob/main/six-transfer-tokens/README.md`.trim()
       super(msg)
       this.name = "Stored Interaction Undefined Address Configuration Error"
     }
