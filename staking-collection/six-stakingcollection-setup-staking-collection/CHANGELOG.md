@@ -1,11 +1,17 @@
 ### Unreleased
 
+## 0.0.7
+
+### Patch Changes
+
+- bd2d3ba: fixed typo
+
 - YYYY-MM-DD **BREAKING?** -- description
 
 ### 0.0.6 -- 2021-08-08
 
 - 2021-08-08 -- Updates transaction code
-  
+
 ### 0.0.4 -- 2021-06-27
 
 - 2021-06-87 -- Removes passing machineAccountInfo into transfer node method call.

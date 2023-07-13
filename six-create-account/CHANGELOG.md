@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.10
+
+### Patch Changes
+
+- 160bb70: Updated dependencies
+
 - YYYY-MM-DD **BREAKING?** -- description
 
 ### 0.0.9 -- 2022-02-07

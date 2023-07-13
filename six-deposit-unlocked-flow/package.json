@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-deposit-unlocked-flow",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Flow SDK Stored Interaction - Deposit Unlocked Flow",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
