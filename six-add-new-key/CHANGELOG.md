@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.11
+
+### Patch Changes
+
+- 160bb70: Updated dependencies
+
 - YYYY-MM-DD **BREAKING?** -- description
 
 ### 0.0.10 -- 2022-02-07
@@ -21,7 +27,7 @@
 ### 0.0.4 -- 2020-11-05
 
 - 2020-11-05 -- Removes type: module from package.json
-  
+
 ### 0.0.3 -- 2020-09-06
 
 - 2020-09-06 -- Updates interaction template.

@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.7
+
+### Patch Changes
+
+- bd2d3ba: fixed typo
+
 - YYYY-MM-DD **BREAKING?** -- description
 
 ### 0.0.6 -- 2021-08-09

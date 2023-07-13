@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.10
+
+### Patch Changes
+
+- 160bb70: Updated dependencies
+
 - YYYY-MM-DD **BREAKING?** -- description
 
 ### 0.0.8 -- 2021-06-03

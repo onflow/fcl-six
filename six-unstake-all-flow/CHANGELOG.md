@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.7
+
+### Patch Changes
+
+- 160bb70: Updated dependencies
+
 ### 0.0.5 -- 2021-06-03
 
 - 2021-06-03 -- Updates peerDependencies versioning
