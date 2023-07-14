@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.4-alpha.0
+
+### Patch Changes
+
+- 0edadf1: prerelease 1.5.0
+
 - YYYY-MM-DD **BREAKING?** -- description
 
 ### 0.0.1 -- 2022-03-21

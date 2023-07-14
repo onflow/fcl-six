@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.6-alpha.0
+
+### Patch Changes
+
+- 0edadf1: prerelease 1.5.0
+
 ## 0.0.5
 
 ### Patch Changes

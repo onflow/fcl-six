@@ -45,5 +45,7 @@
     "@onflow/six-usdc-setup": "0.0.3",
     "@onflow/six-usdc-transfer": "0.0.1"
   },
-  "changesets": []
+  "changesets": [
+    "sixty-kids-call"
+  ]
 }
