@@ -34,7 +34,7 @@
     "start": "microbundle watch"
   },
   "peerDependencies": {
-    "@onflow/fcl": ">=1.4.0 || >=1.5.0",
+    "@onflow/fcl": ">=1.4.0 || >=1.5.0 || >=1.5.0-alpha",
     "@onflow/rlp": ">=1.1.0"
   }
 }
