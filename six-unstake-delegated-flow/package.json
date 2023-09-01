@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@onflow/config": ">=1.1.0",
-    "@onflow/fcl": ">=1.4.0 || >=1.5.0",
+    "@onflow/fcl": ">=1.4.0 <2.0.0",
     "@onflow/types": ">=1.1.0"
   }
 }
