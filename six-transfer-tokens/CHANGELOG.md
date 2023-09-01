@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.12
+
+### Patch Changes
+
+- ea27119: revert to multiple versions
+
 ## 0.0.11
 
 ### Patch Changes
