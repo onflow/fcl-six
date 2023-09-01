@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.12
+
+### Patch Changes
+
+- 7e44bfd: Update fcl dep
+
 ## 0.0.11
 
 ### Patch Changes
