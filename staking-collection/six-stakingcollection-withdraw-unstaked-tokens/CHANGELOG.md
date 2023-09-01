@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.8
+
+### Patch Changes
+
+- ca2f51c: bump version
+
 ## 0.0.7
 
 ### Patch Changes
