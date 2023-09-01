@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-topshot-setup-collection",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Flow SDK Stored Interaction - TopShot Setup Collection",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
