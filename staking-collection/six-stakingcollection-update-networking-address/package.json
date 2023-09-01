@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-stakingcollection-update-networking-address",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Flow SDK Stored Interaction - Updates a networking address for a node held in a Staking Collection",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
