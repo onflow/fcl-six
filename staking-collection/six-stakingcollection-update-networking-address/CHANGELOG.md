@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.0.3
+
+### Patch Changes
+
+- 646fc5c: update the rest
+
 ## 0.0.2
 
 ### Patch Changes
