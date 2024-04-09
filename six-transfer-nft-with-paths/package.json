@@ -1,7 +1,7 @@
 {
-  "name": "@onflow/six-transfer-tokens-with-paths",
+  "name": "@onflow/six-transfer-nft-with-paths",
   "version": "0.0.1",
-  "description": "Flow SDK Stored Interaction - Transfer Tokens with paths",
+  "description": "Flow SDK Stored Interaction - TopShot Transfer Moment",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
   "homepage": "https://onflow.org",
@@ -22,10 +22,10 @@
     "jest-esm-transformer": "1.0.0",
     "microbundle": "0.12.0-next.8"
   },
-  "source": "src/six-transfer-tokens-with-paths.js",
-  "main": "dist/six-transfer-tokens-with-paths.js",
-  "module": "dist/six-transfer-tokens-with-paths.module.js",
-  "unpkg": "dist/six-transfer-tokens-with-paths.umd.js",
+  "source": "src/six-transfer-nft-with-paths.js",
+  "main": "dist/six-transfer-nft-with-paths.js",
+  "module": "dist/six-transfer-nft-with-paths.module.js",
+  "unpkg": "dist/six-transfer-nft-with-paths.umd.js",
   "scripts": {
     "prepublishOnly": "npm test && npm run build",
     "test": "jest",

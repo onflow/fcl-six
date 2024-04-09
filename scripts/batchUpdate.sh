@@ -4,12 +4,12 @@ npm run fetchAndUpdate "Create Account" six-create-account/src/six-create-accoun
 npm run fetchAndUpdate "Add Key" six-add-new-key/src/six-add-new-key.js
 # There is no packages for these transactions
 #npm run fetchAndUpdate "Remove Key" 
-#npm run fetchAndUpdate "Setup Fungible Token Vault" 
+npm run fetchAndUpdate "Setup Fungible Token Vault" six-setup-token-vault/src/six-setup-token-vault.js 
 npm run fetchAndUpdate "Transfer Fungible Token with Paths" six-transfer-tokens-with-paths/src/six-transfer-tokens-with-paths.js 
 npm run fetchAndUpdate "Transfer Fungible Token with Address" six-transfer-tokens-with-address/src/six-transfer-tokens-with-address.js 
-#npm run fetchAndUpdate "Setup NFT Collection" 
-#npm run fetchAndUpdate "Transfer NFT with Paths" 
-#npm run fetchAndUpdate "Transfer NFT with Address" 
+npm run fetchAndUpdate "Setup NFT Collection" six-setup-nft-collection/src/six-setup-nft-collection.js
+npm run fetchAndUpdate "Transfer NFT with Paths" six-transfer-nft-with-paths/src/six-transfer-nft-with-paths.js
+npm run fetchAndUpdate "Transfer NFT with Address" six-transfer-nft-with-address/src/six-transfer-nft-with-address.js
 npm run fetchAndUpdate "Withdraw Unlocked FLOW" six-withdraw-unlocked-flow/src/six-withdraw-unlocked-flow.js
 npm run fetchAndUpdate "Deposit Unlocked FLOW" six-deposit-unlocked-flow/src/six-deposit-unlocked-flow.js
 npm run fetchAndUpdate "Setup Staking Collection" staking-collection/six-stakingcollection-setup-staking-collection/src/six-stakingcollection-setup-staking-collection.js

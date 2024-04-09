@@ -4,14 +4,15 @@ import {config} from "@onflow/config"
 
 const DEPS = new Set([
     "0xFUNGIBLETOKENADDRESS",
+    "0xFUNGIBLETOKENMETADATAVIEWS"
 ])
 
-export const TITLE = "Transfer Tokens"
+export const TITLE = "Transfer Tokens with addresses"
 export const DESCRIPTION = "Transfer tokens from one account to another."
 export const VERSION = "0.0.1"
 export const HASH = "47851586d962335e3f7d9e5d11a4c527ee4b5fd1c3895e3ce1b9c2821f60b166"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
-import FungibleTokenMetadataViews from 0xFUNGIBLETOKENADDRESS
+import FungibleTokenMetadataViews from 0xFUNGIBLETOKENMETADATAVIEWS
 
 /// Can pass in any contract address and name to transfer a token from that contract
 /// This lets you choose the token you want to send

@@ -1,7 +1,7 @@
 {
-  "name": "@onflow/six-transfer-tokens",
-  "version": "0.0.12",
-  "description": "Flow SDK Stored Interaction - Transfer Tokens",
+  "name": "@onflow/six-transfer-tokens-with-address",
+  "version": "0.0.1",
+  "description": "Flow SDK Stored Interaction - Transfer Tokens with address",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
   "homepage": "https://onflow.org",
@@ -22,10 +22,10 @@
     "jest-esm-transformer": "1.0.0",
     "microbundle": "0.12.0-next.8"
   },
-  "source": "src/six-transfer-tokens.js",
-  "main": "dist/six-transfer-tokens.js",
-  "module": "dist/six-transfer-tokens.module.js",
-  "unpkg": "dist/six-transfer-tokens.umd.js",
+  "source": "src/six-transfer-tokens-with-address.js",
+  "main": "dist/six-transfer-tokens-with-address.js",
+  "module": "dist/six-transfer-tokens-with-address.module.js",
+  "unpkg": "dist/six-transfer-tokens-with-address.umd.js",
   "scripts": {
     "prepublishOnly": "npm test && npm run build",
     "test": "jest",
