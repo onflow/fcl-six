@@ -10,6 +10,16 @@ JS file has been updated with the new source code.
 JS file has been updated with the new source code.
 
 > fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Transfer Fungible Token with Paths six-transfer-tokens-with-paths/src/six-transfer-tokens-with-paths.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Transfer Fungible Token with Address six-transfer-tokens-with-address/src/six-transfer-tokens-with-address.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
 > node ./scripts/fetchAndUpdate.js Withdraw Unlocked FLOW six-withdraw-unlocked-flow/src/six-withdraw-unlocked-flow.js
 
 JS file has been updated with the new source code.

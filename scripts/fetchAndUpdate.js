@@ -15,10 +15,12 @@ const url = 'https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_
 function replaceAddressesWithPlaceholders(content) {
     let regex = /(import FlowStakingCollection from )0x[a-fA-F0-9]+/;
     let code = content.replace(regex, `$10xSTAKINGCOLLECTIONADDRESS`);
+    
+    regex = /(import FungibleTokenMetadataViews from )0x[a-fA-F0-9]+/;
+    code = content.replace(regex, `$10xFUNGIBLETOKENMETADATAVIEWS`);
 
-    code = code.replace(/0xf233dcee88fe0abe/g, '0xFUNGIBLETOKENADDRESS');
-    code = code.replace(/0x1654653399040a61/g, '0xFLOWTOKENADDRESS');
-    code = code.replace(/0x8624b52f9ddcd04a/g, '0xIDENTITYTABLEADDRESS');
+    regex = /(import FungibleToken from )0x[a-fA-F0-9]+/;
+    code = content.replace(regex, `$10xFUNGIBLETOKENADDRESS`);
 
     regex = /(import FlowIDTableStaking from )0x[a-fA-F0-9]+/;
     code = code.replace(regex, `$10xIDENTITYTABLEADDRESS`);
@@ -26,6 +28,7 @@ function replaceAddressesWithPlaceholders(content) {
     regex = /(import LockedTokens from )0x[a-fA-F0-9]+/;
     code = code.replace(regex, `$10xLOCKEDTOKENADDRESS`);
 
+    code = code.replace(/0x1654653399040a61/g, '0xFLOWTOKENADDRESS');
     return  code;
 }
 
@@ -35,6 +38,7 @@ function replacePlaceholdersWithAddresses(content) {
     code = code.replace(/0xFLOWTOKENADDRESS/g, '0x1654653399040a61');
     code = code.replace(/0xIDENTITYTABLEADDRESS/g, '0x8624b52f9ddcd04a');
     code = code.replace(/0xLOCKEDTOKENADDRESS/g, '0x8d0e87b65159ae63');
+    code = code.replace(/0xFUNGIBLETOKENMETADATAVIEWS/g, '0xf233dcee88fe0abe');
     return code;
 }
 

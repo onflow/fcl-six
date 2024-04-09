@@ -9,7 +9,6 @@
     "build": "lerna run build",
     "changeset": "changeset",
     "release": "npm run build && npm run changeset publish",
-    "formatter": "node ./scripts/formatter.js",
     "fetchAndUpdate": "node ./scripts/fetchAndUpdate.js"
   },
   "dependencies": {

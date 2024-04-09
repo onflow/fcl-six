@@ -5,8 +5,8 @@ npm run fetchAndUpdate "Add Key" six-add-new-key/src/six-add-new-key.js
 # There is no packages for these transactions
 #npm run fetchAndUpdate "Remove Key" 
 #npm run fetchAndUpdate "Setup Fungible Token Vault" 
-#npm run fetchAndUpdate "Transfer Fungible Token with Paths" 
-#npm run fetchAndUpdate "Transfer Fungible Token with Address" 
+npm run fetchAndUpdate "Transfer Fungible Token with Paths" six-transfer-tokens-with-paths/src/six-transfer-tokens-with-paths.js 
+npm run fetchAndUpdate "Transfer Fungible Token with Address" six-transfer-tokens-with-address/src/six-transfer-tokens-with-address.js 
 #npm run fetchAndUpdate "Setup NFT Collection" 
 #npm run fetchAndUpdate "Transfer NFT with Paths" 
 #npm run fetchAndUpdate "Transfer NFT with Address" 
