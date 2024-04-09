@@ -1,0 +1,100 @@
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Create Account six-create-account/src/six-create-account.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Add Key six-add-new-key/src/six-add-new-key.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Withdraw Unlocked FLOW six-withdraw-unlocked-flow/src/six-withdraw-unlocked-flow.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Deposit Unlocked FLOW six-deposit-unlocked-flow/src/six-deposit-unlocked-flow.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Setup Staking Collection staking-collection/six-stakingcollection-setup-staking-collection/src/six-stakingcollection-setup-staking-collection.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Register Delegator staking-collection/six-stakingcollection-register-delegator/src/six-stakingcollection-register-delegator.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Register Node staking-collection/six-stakingcollection-register-node/src/six-stakingcollection-register-node.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Create Machine Account staking-collection/six-stakingcollection-create-machine-account/src/six-stakingcollection-create-machine-account.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Request Unstaking staking-collection/six-stakingcollection-request-unstaking/src/six-stakingcollection-request-unstaking.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Stake New Tokens staking-collection/six-stakingcollection-stake-new-tokens/src/six-stakingcollection-stake-new-tokens.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Stake Rewarded Tokens staking-collection/six-stakingcollection-stake-rewarded-tokens/src/six-stakingcollection-stake-rewarded-tokens.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Stake Unstaked Tokens staking-collection/six-stakingcollection-stake-unstaked-tokens/src/six-stakingcollection-stake-unstaked-tokens.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Unstake All staking-collection/six-stakingcollection-unstake-all/src/six-stakingcollection-unstake-all.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Withdraw Rewarded Tokens six-withdraw-rewarded-flow/src/six-withdraw-rewarded-flow.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Withdraw Unstaked Tokens six-withdraw-unlocked-flow/src/six-withdraw-unlocked-flow.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Close Stake staking-collection/six-stakingcollection-close-stake/src/six-stakingcollection-close-stake.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Transfer Node staking-collection/six-stakingcollection-transfer-node/src/six-stakingcollection-transfer-node.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Transfer Delegator staking-collection/six-stakingcollection-transfer-delegator/src/six-stakingcollection-transfer-delegator.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Withdraw From Machine Account staking-collection/six-stakingcollection-withdraw-from-machine-account/src/six-stakingcollection-withdraw-from-machine-account.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Update Networking Address staking-collection/six-stakingcollection-update-networking-address/src/six-stakingcollection-update-networking-address.js
+
+JS file has been updated with the new source code.

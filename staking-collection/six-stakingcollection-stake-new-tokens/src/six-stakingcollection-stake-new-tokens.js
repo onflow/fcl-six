@@ -7,10 +7,9 @@ const DEPS = new Set([
 
 export const TITLE = "Stake New Tokens"
 export const DESCRIPTION = "Stakes new tokens for a stake held in a Staking Collection."
-export const VERSION = "0.0.4"
+export const VERSION = "0.0.5"
 export const HASH = "0d83379faac487da7eaf4149d30eac0da9b816cebc57a0718cf3879c2edc1e31"
-export const CODE = 
-`import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Commits new tokens to stake for the specified node or delegator in the staking collection
 /// The tokens from the locked vault are used first, if it exists
@@ -18,11 +17,11 @@ export const CODE =
 
 transaction(nodeID: String, delegatorID: UInt32?, amount: UFix64) {
     
-    let stakingCollectionRef: &FlowStakingCollection.StakingCollection
+    let stakingCollectionRef: auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection
 
-    prepare(account: AuthAccount) {
-        self.stakingCollectionRef = account.borrow<&FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic("Could not borrow ref to StakingCollection")
+    prepare(account: auth(BorrowValue) &Account) {
+        self.stakingCollectionRef = account.storage.borrow<auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
+            ?? panic("Could not borrow a reference to a StakingCollection in the primary user's account")
     }
 
     execute {

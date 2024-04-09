@@ -7,21 +7,20 @@ const DEPS = new Set([
 
 export const TITLE = "Withdraw FLOW from Machine Account"
 export const DESCRIPTION = "Withdraws FLOW from a machine account."
-export const VERSION = "0.0.3"
+export const VERSION = "0.0.4"
 export const HASH = "c77ce3a9e3681a64880ec6c4a49b359fa143f25779ca6da46e57febe2f2e1fef"
-export const CODE = 
-`import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Request to withdraw tokens from the machine account
 /// The tokens are automatically deposited to the unlocked account vault
 
 transaction(nodeID: String, amount: UFix64) {
     
-    let stakingCollectionRef: &FlowStakingCollection.StakingCollection
+    let stakingCollectionRef: auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection
 
-    prepare(account: AuthAccount) {
-        self.stakingCollectionRef = account.borrow<&FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic("Could not borrow ref to StakingCollection")
+    prepare(account: auth(BorrowValue) &Account) {
+        self.stakingCollectionRef = account.storage.borrow<auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
+            ?? panic("Could not borrow a reference to a StakingCollection in the primary user's account")
     }
 
     execute {

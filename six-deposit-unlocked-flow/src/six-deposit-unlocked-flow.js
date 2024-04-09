@@ -10,23 +10,22 @@ const DEPS = new Set([
 
 export const TITLE = "Deposit Unlocked Tokens"
 export const DESCRIPTION = "Deposit Unlocked Tokens."
-export const VERSION = "0.0.9"
+export const VERSION = "0.0.10"
 export const HASH = "74355dc8df221bc0d170b2fe8deacd6f1f554d6beea58ad9fee7a07f740eaefe"
-export const CODE = 
-`import FungibleToken from 0xFUNGIBLETOKENADDRESS
+export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FlowToken from 0xFLOWTOKENADDRESS
 import LockedTokens from 0xLOCKEDTOKENADDRESS
 
 transaction(amount: UFix64) {
 
     let holderRef: &LockedTokens.TokenHolder
-    let vaultRef: &FlowToken.Vault
+    let vaultRef: auth(FungibleToken.Withdraw) &FlowToken.Vault
 
-    prepare(acct: AuthAccount) {
-        self.holderRef = acct.borrow<&LockedTokens.TokenHolder>(from: LockedTokens.TokenHolderStoragePath)
-            ?? panic("Could not borrow a reference to TokenHolder")
+    prepare(acct: auth(BorrowValue) &Account) {
+        self.holderRef = acct.storage.borrow<&LockedTokens.TokenHolder>(from: LockedTokens.TokenHolderStoragePath)
+            ?? panic("The primary user account does not have an associated locked account")
 
-        self.vaultRef = acct.borrow<&FlowToken.Vault>(from: /storage/flowTokenVault)
+        self.vaultRef = acct.storage.borrow<auth(FungibleToken.Withdraw) &FlowToken.Vault>(from: /storage/flowTokenVault)
             ?? panic("Could not borrow flow token vault ref")
     }
 
