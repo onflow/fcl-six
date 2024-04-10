@@ -11,7 +11,7 @@ const DEPS = new Set(["0xSTAKINGCOLLECTIONADDRESS"]);
 
 export const TITLE = "Register Node";
 export const DESCRIPTION = "Register a node held in a Staking Collection.";
-export const VERSION = "0.0.9";
+export const VERSION = "0.1.0";
 export const HASH =
   "888e40ddf906f8194d6fe2d7675db4fb0e7c1d87a9b4796df4df68ca0559601e";
 export const CODE = `import Crypto

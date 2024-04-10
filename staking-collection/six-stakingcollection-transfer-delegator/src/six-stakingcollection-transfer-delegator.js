@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Transfer Delegator"
 export const DESCRIPTION = "Transfers a delegator from one Staking Collection to another."
-export const VERSION = "0.0.7"
+export const VERSION = "0.1.0"
 export const HASH = "ff070fbf6b6b4fdfea5055edb86b3a3bebff95da976816ce1ebb3e8563a53663"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 

@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Create Machine Account"
 export const DESCRIPTION = "Creates a Machine Account for node held in Staking Collection."
-export const VERSION = "0.0.4"
+export const VERSION = "0.1.0"
 export const HASH = "f198785f62ed2d916b7e7eaa4ef9ff4007b3b4c5a046915ecadc0e683ef6ab34"
 export const CODE = `import Crypto
 import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
