@@ -2,8 +2,7 @@
 
 npm run fetchAndUpdate "Create Account" six-create-account/src/six-create-account.js
 npm run fetchAndUpdate "Add Key" six-add-new-key/src/six-add-new-key.js
-# There is no packages for these transactions
-#npm run fetchAndUpdate "Remove Key" 
+npm run fetchAndUpdate "Remove Key" six-remove-key/src/six-remove-key.js
 npm run fetchAndUpdate "Setup Fungible Token Vault" six-setup-token-vault/src/six-setup-token-vault.js 
 npm run fetchAndUpdate "Transfer Fungible Token with Paths" six-transfer-tokens-with-paths/src/six-transfer-tokens-with-paths.js 
 npm run fetchAndUpdate "Transfer Fungible Token with Address" six-transfer-tokens-with-address/src/six-transfer-tokens-with-address.js 

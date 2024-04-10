@@ -1,0 +1,41 @@
+{
+  "name": "@onflow/six-remove-key",
+  "version": "0.0.1",
+  "description": "Flow SDK Stored Interaction - Remove Key",
+  "license": "Apache-2.0",
+  "author": "Dapper Labs <dev@dapperlabs.com>",
+  "homepage": "https://onflow.org",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/onflow/fcl-six.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onflow/fcl-six/issues"
+  },
+  "jest": {
+    "transform": {
+      ".js": "jest-esm-transformer"
+    }
+  },
+  "devDependencies": {
+    "jest": "25.3.0",
+    "jest-esm-transformer": "1.0.0",
+    "microbundle": "0.12.0-next.8"
+  },
+  "type": "module",
+  "source": "src/six-remove-key.js",
+  "main": "dist/six-remove.key.js",
+  "module": "dist/six-remove.key.module.js",
+  "unpkg": "dist/six-remove.key.umd.js",
+  "scripts": {
+    "prepublishOnly": "npm test && npm run build",
+    "test": "jest",
+    "build": "microbundle",
+    "test:watch": "jest --watch",
+    "start": "microbundle watch"
+  },
+  "peerDependencies": {
+    "@onflow/fcl": ">=1.4.0 || >=1.5.0 || >=1.6.0 || >=1.7.0",
+    "@onflow/types": ">=1.1.0"
+  }
+}

@@ -10,6 +10,11 @@ JS file has been updated with the new source code.
 JS file has been updated with the new source code.
 
 > fetchAndUpdate
+> node ./scripts/fetchAndUpdate.js Remove Key six-remove-key/src/six-remove-key.js
+
+JS file has been updated with the new source code.
+
+> fetchAndUpdate
 > node ./scripts/fetchAndUpdate.js Setup Fungible Token Vault six-setup-token-vault/src/six-setup-token-vault.js
 
 JS file has been updated with the new source code.
