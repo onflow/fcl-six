@@ -3,3 +3,4 @@
 scripts/log.txt
 updateVersions.js
 updateChangeset.js
+updateDeprecated.js
