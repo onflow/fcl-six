@@ -10,28 +10,25 @@ const DEPS = new Set([
 
 export const TITLE = "Withdraw Unlocked Tokens"
 export const DESCRIPTION = "Withdraw Unlocked Tokens to an authorizers account."
-export const VERSION = "0.0.9"
+export const VERSION = "0.1.0"
 export const HASH = "a2146e3e6e7718779ce59376b88760c154d82b7d132fe2c377114ec7cf434e7b"
-export const CODE = 
-`import FungibleToken from 0xFUNGIBLETOKENADDRESS
-import FlowToken from 0xFLOWTOKENADDRESS
-import LockedTokens from 0xLOCKEDTOKENADDRESS
+export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
-transaction(amount: UFix64) {
+/// Request to withdraw unstaked tokens for the specified node or delegator in the staking collection
+/// The tokens are automatically deposited to the unlocked account vault first,
+/// And then any locked tokens are deposited into the locked account vault if it is there
 
-    let holderRef: &LockedTokens.TokenHolder
-    let vaultRef: &FlowToken.Vault
+transaction(nodeID: String, delegatorID: UInt32?, amount: UFix64) {
+    
+    let stakingCollectionRef: auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection
 
-    prepare(acct: AuthAccount) {
-        self.holderRef = acct.borrow<&LockedTokens.TokenHolder>(from: LockedTokens.TokenHolderStoragePath)
-            ?? panic("Could not borrow a reference to TokenHolder")
-
-        self.vaultRef = acct.borrow<&FlowToken.Vault>(from: /storage/flowTokenVault)
-            ?? panic("Could not borrow flow token vault ref")
+    prepare(account: auth(BorrowValue) &Account) {
+        self.stakingCollectionRef = account.storage.borrow<auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
+            ?? panic("Could not borrow a reference to a StakingCollection in the primary user's account")
     }
 
     execute {
-        self.vaultRef.deposit(from: <-self.holderRef.withdraw(amount: amount))
+        self.stakingCollectionRef.withdrawUnstakedTokens(nodeID: nodeID, delegatorID: delegatorID, amount: amount)
     }
 }
 `

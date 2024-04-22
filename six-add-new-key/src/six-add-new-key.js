@@ -3,25 +3,26 @@ import * as t from "@onflow/types"
 
 export const TITLE = "Add New Key"
 export const DESCRIPTION = "Add a new key to an Account on Flow."
-export const VERSION = "0.0.10"
-export const HASH = "82b3c3bf526f45479f5e29d6e7c999326a1373b994461a9ffc59d6e65003d8d2"
-export const CODE = 
-`import Crypto
-transaction(publicKey: String, signatureAlgorithm: UInt8, hashAlgorithm: UInt8, weight: UFix64) {
-    prepare(signer: AuthAccount) {
-        let key = PublicKey(
-            publicKey: publicKey.decodeHex(),
-            signatureAlgorithm: SignatureAlgorithm(rawValue: signatureAlgorithm)!
-        )
+export const VERSION = "0.1.0"
+export const HASH = "21d4e87df171ccbe015efe69dc2ffd24814c5fc0f2e364daf5c80515ce4a8bd9"
+export const CODE = `import Crypto
 
-        signer.keys.add(
-            publicKey: key,
-            hashAlgorithm: HashAlgorithm(rawValue: hashAlgorithm)!,
-            weight: weight
-        )
-    }   
-}
-`
+transaction(key: String, signatureAlgorithm: UInt8, hashAlgorithm: UInt8, weight: UFix64) {
+
+	prepare(signer: auth(AddKey) &Account) {
+		pre {
+			signatureAlgorithm >= 1 && signatureAlgorithm <= 3: "Must provide a signature algorithm raw value that is 1, 2, or 3"
+			hashAlgorithm >= 1 && hashAlgorithm <= 6: "Must provide a hash algorithm raw value that is between 1 and 6"
+			weight <= 1000.0: "The key weight must be between 0 and 1000"
+		}
+		let publicKey = PublicKey(
+			publicKey: key.decodeHex(),
+			signatureAlgorithm: SignatureAlgorithm(rawValue: signatureAlgorithm)!
+		)
+
+		signer.keys.add(publicKey: publicKey, hashAlgorithm: HashAlgorithm(rawValue: hashAlgorithm)!, weight: weight)
+	}
+}`
 
 export const template = ({
     proposer,

@@ -1,0 +1,41 @@
+{
+  "name": "@onflow/six-transfer-nft-with-address",
+  "version": "0.1.0",
+  "description": "Flow SDK Stored Interaction - Transfer NFT Moment",
+  "license": "Apache-2.0",
+  "author": "Dapper Labs <dev@dapperlabs.com>",
+  "homepage": "https://onflow.org",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/onflow/fcl-six.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onflow/fcl-six/issues"
+  },
+  "jest": {
+    "transform": {
+      ".js": "jest-esm-transformer"
+    }
+  },
+  "devDependencies": {
+    "jest": "25.3.0",
+    "jest-esm-transformer": "1.0.0",
+    "microbundle": "0.12.0-next.8"
+  },
+  "source": "src/six-transfer-nft-with-address.js",
+  "main": "dist/six-transfer-nft-with-address.js",
+  "module": "dist/six-transfer-nft-with-address.module.js",
+  "unpkg": "dist/six-transfer-nft-with-address.umd.js",
+  "scripts": {
+    "prepublishOnly": "npm test && npm run build",
+    "test": "jest",
+    "build": "microbundle",
+    "test:watch": "jest --watch",
+    "start": "microbundle watch"
+  },
+  "peerDependencies": {
+    "@onflow/config": ">=1.1.0",
+    "@onflow/fcl": ">=1.4.0 || >=1.5.0 || >=1.6.0 || >=1.7.0",
+    "@onflow/types": ">=1.1.0"
+  }
+}

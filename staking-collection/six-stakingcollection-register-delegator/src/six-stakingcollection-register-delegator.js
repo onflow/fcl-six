@@ -7,21 +7,20 @@ const DEPS = new Set([
 
 export const TITLE = "Register Delegator"
 export const DESCRIPTION = "Register a delegator held in a Staking Collection."
-export const VERSION = "0.0.4"
-export const HASH = "611859738ce4185cc36a63baf13a2f4c28936e5a612ffc43e1291aecc8df4555"
-export const CODE = 
-`import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+export const VERSION = "0.1.0"
+export const HASH = "2923d5e3f490b530cdcf93284460359b9ddc62fe4f6acf2a4bd33d02d394994f"
+export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Registers a delegator in the staking collection resource
 /// for the specified nodeID and the amount of tokens to commit
 
 transaction(id: String, amount: UFix64) {
     
-    let stakingCollectionRef: &FlowStakingCollection.StakingCollection
+    let stakingCollectionRef: auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection
 
-    prepare(account: AuthAccount) {
-        self.stakingCollectionRef = account.borrow<&FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic("Could not borrow ref to StakingCollection")
+    prepare(account: auth(BorrowValue) &Account) {
+        self.stakingCollectionRef = account.storage.borrow<auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
+            ?? panic("Could not borrow a reference to a StakingCollection in the primary user's account")
     }
 
     execute {

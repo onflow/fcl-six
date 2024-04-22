@@ -9,30 +9,25 @@ const DEPS = new Set([
 
 export const TITLE = "Withdraw Rewarded Flow"
 export const DESCRIPTION = "Withdraw Rewarded Flow to an account."
-export const VERSION = "0.0.11"
+export const VERSION = "0.1.0"
 export const HASH = "9bb8f0562eea5e45c11f9289540f39c99a21c9a0fb060a7d3f832e98c2696f2d"
-export const CODE = 
-`import LockedTokens from 0xLOCKEDTOKENADDRESS
-import FlowToken from 0xFLOWTOKENADDRESS
+export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
-transaction(amount: UFix64) {
+/// Request to withdraw rewarded tokens for the specified node or delegator in the staking collection
+/// The tokens are automatically deposited to the unlocked account vault first,
+/// And then any locked tokens are deposited into the locked account vault
 
-    let holderRef: &LockedTokens.TokenHolder
-    let vaultRef: &FlowToken.Vault
+transaction(nodeID: String, delegatorID: UInt32?, amount: UFix64) {
+    
+    let stakingCollectionRef: auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection
 
-    prepare(account: AuthAccount) {
-        self.holderRef = account.borrow<&LockedTokens.TokenHolder>(from: LockedTokens.TokenHolderStoragePath)
-            ?? panic("Could not borrow reference to TokenHolder")
-
-        self.vaultRef = account.borrow<&FlowToken.Vault>(from: /storage/flowTokenVault)
-            ?? panic("Could not borrow reference to FlowToken value")
+    prepare(account: auth(BorrowValue) &Account) {
+        self.stakingCollectionRef = account.storage.borrow<auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
+            ?? panic("Could not borrow a reference to a StakingCollection in the primary user's account")
     }
 
     execute {
-        let stakerProxy = self.holderRef.borrowStaker()
-
-        stakerProxy.withdrawRewardedTokens(amount: amount)
-        self.vaultRef.deposit(from: <-self.holderRef.withdraw(amount: amount))
+        self.stakingCollectionRef.withdrawRewardedTokens(nodeID: nodeID, delegatorID: delegatorID, amount: amount)
     }
 }
 `
