@@ -45,8 +45,8 @@ function replacePlaceholdersWithAddresses(content) {
     code = code.replace(/0xIDENTITYTABLEADDRESS/g, '0x8624b52f9ddcd04a');
     code = code.replace(/0xLOCKEDTOKENADDRESS/g, '0x8d0e87b65159ae63');
     code = code.replace(/0xFUNGIBLETOKENMETADATAVIEWS/g, '0xf233dcee88fe0abe');
-    code = code.replace(/0xNONFUNGIBLETOKEN`/g, '0x1d7e57aa55817448');
-    code = code.replace(/0xNONFUNGIBLETOKENMETADATAVIEWS`/g, '0x1d7e57aa55817448');
+    code = code.replace(/0xNONFUNGIBLETOKENMETADATAVIEWS/g, '0x1d7e57aa55817448');
+    code = code.replace(/0xNONFUNGIBLETOKEN/g, '0x1d7e57aa55817448');
     return code;
 }
 
@@ -96,7 +96,7 @@ async function fetchAndUpdate(searchName, jsFilePath) {
      const originalHash = getHash(backToOriginal);
 
      if (originalHash !== sourceHash) {
-        console.error('Failed: source hash does not match replaced hash from placeholders.');
+        console.error(`Failed: source hash does not match replaced hash from placeholders. ${jsFilePath}`);
         return;
      } 
 
@@ -105,7 +105,6 @@ async function fetchAndUpdate(searchName, jsFilePath) {
           console.error('Failed: Error writing updated JS file:', err);
           return;
         }
-        console.log('JS file has been updated with the new source code.');
       });
     });
   } catch (error) {

@@ -11,8 +11,8 @@ export const TITLE = "Transfer NFT with address"
 export const DESCRIPTION = "Transfers a moment from an authorizer's NFT to another account's."
 export const VERSION = "0.1.0"
 export const HASH = "3bb66424f129bee4605ef2f932ce8c133385beea019518f316bae7a5c34aa7bd"
-export const CODE = `import 0x1d7e57aa55817448
-import 0x1d7e57aa55817448
+export const CODE = `import NonFungibleToken from 0xNONFUNGIBLETOKEN
+import MetadataViews from 0xNONFUNGIBLETOKENMETADATAVIEWS
 
 /// Can pass in any contract address and name
 /// This lets you choose the token you want to send because
@@ -51,10 +51,7 @@ transaction(to: Address, id: UInt64, contractAddress: Address, contractName: Str
         let recipient = getAccount(to)
 
         // borrow a public reference to the receivers collection
-        let receiverCap = recipient.capabilities.get<&{NonFungibleToken.Receiver}>(self.collectionData.publicPath)
-            ?? panic("Could not get the recipient's Receiver Capability")
-
-        let receiverRef = receiverCap.borrow()
+        let receiverRef = recipient.capabilities.borrow<&{NonFungibleToken.Receiver}>(self.collectionData.publicPath)
             ?? panic("Could not borrow reference to the recipient's receiver")
 
         // Deposit the NFT to the receiver

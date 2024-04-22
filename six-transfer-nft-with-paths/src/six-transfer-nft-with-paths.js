@@ -11,7 +11,7 @@ export const TITLE = "NBA Top Shot Transfer Moment"
 export const DESCRIPTION = "Transfers a moment from an authorizer's NBA Top Shot collection to another account's."
 export const VERSION = "0.1.0"
 export const HASH = "3bb66424f129bee4605ef2f932ce8c133385beea019518f316bae7a5c34aa7bd"
-export const CODE = `import 0x1d7e57aa55817448
+export const CODE = `import NonFungibleToken from 0xNONFUNGIBLETOKEN
 
 /// Can pass in any storage path and receiver path instead of just the default.
 /// This lets you choose the token you want to send as well the capability you want to send it to.
@@ -45,10 +45,7 @@ transaction(to: Address, id: UInt64, senderPathIdentifier: String, receiverPathI
         let recipient = getAccount(to)
 
         // borrow a public reference to the receivers collection
-        let receiverCap = recipient.capabilities.get<&{NonFungibleToken.Receiver}>(publicPath)
-            ?? panic("Could not get the recipient's Receiver Capability")
-
-        let receiverRef = receiverCap.borrow()
+        let receiverRef = recipient.capabilities.borrow<&{NonFungibleToken.Receiver}>(publicPath)
             ?? panic("Could not borrow reference to the recipient's receiver")
 
         // Deposit the NFT to the receiver

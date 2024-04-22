@@ -11,7 +11,7 @@ export const VERSION = "0.1.0"
 export const HASH = "ff070fbf6b6b4fdfea5055edb86b3a3bebff95da976816ce1ebb3e8563a53663"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
-// Transfers a NodeDelegator object from an authorizers accoount
+// Transfers a NodeDelegator object from an authorizers account
 // and adds the NodeDelegator to another accounts Staking Collection
 // identified by the to Address.
 

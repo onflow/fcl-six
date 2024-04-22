@@ -16,8 +16,8 @@ export const CODE = `/// This transaction is what an account would run
 /// uses views to know where to set up the collection
 /// in storage and to create the empty collection.
 
-import 0x1d7e57aa55817448
-import 0x1d7e57aa55817448
+import NonFungibleToken from 0xNONFUNGIBLETOKEN
+import MetadataViews from 0xNONFUNGIBLETOKENMETADATAVIEWS
 
 transaction(contractAddress: Address, contractName: String) {
 
