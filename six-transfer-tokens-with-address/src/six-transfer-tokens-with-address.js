@@ -10,7 +10,7 @@ const DEPS = new Set([
 export const TITLE = "Transfer Tokens with addresses"
 export const DESCRIPTION = "Transfer tokens from one account to another."
 export const VERSION = "0.1.0"
-export const HASH = "47851586d962335e3f7d9e5d11a4c527ee4b5fd1c3895e3ce1b9c2821f60b166"
+export const HASH = "00b65b38201daa6fe4d333fac50a91abaf2c6d8b7eae74073ba7640985e0f464"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FungibleTokenMetadataViews from 0xFUNGIBLETOKENMETADATAVIEWS
 

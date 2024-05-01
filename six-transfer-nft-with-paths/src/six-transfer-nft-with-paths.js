@@ -7,10 +7,10 @@ const DEPS = new Set([
   "0xNONFUNGIBLETOKEN"
 ])
 
-export const TITLE = "NBA Top Shot Transfer Moment"
-export const DESCRIPTION = "Transfers a moment from an authorizer's NBA Top Shot collection to another account's."
+export const TITLE = "Transfer NFT with Paths"
+export const DESCRIPTION = "Transfers a NFT from an authorizer's NFT collection to another account's."
 export const VERSION = "0.1.0"
-export const HASH = "3bb66424f129bee4605ef2f932ce8c133385beea019518f316bae7a5c34aa7bd"
+export const HASH = "aead72317f5a7be6fada3f3e4d1cbcbe5d66f95811d65ad56c3c6ea47e00f9d1"
 export const CODE = `import NonFungibleToken from 0xNONFUNGIBLETOKEN
 
 /// Can pass in any storage path and receiver path instead of just the default.

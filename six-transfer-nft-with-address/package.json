@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-transfer-nft-with-address",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Flow SDK Stored Interaction - Transfer NFT Moment",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",

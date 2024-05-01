@@ -9,7 +9,7 @@ const DEPS = new Set([
 export const TITLE = "Setup Token Vault"
 export const DESCRIPTION = "Set up a Vault and Receiver for an account."
 export const VERSION = "0.1.0"
-export const HASH = "887673892a2e2c12337394570dfa30c5669e93f537ae426690f402799514a9a1"
+export const HASH = "950aa45cd339fa52af4c00153bb37b9a6fc28047d9b0135a9a033bb969be40b4"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FungibleTokenMetadataViews from 0xFUNGIBLETOKENMETADATAVIEWS
 

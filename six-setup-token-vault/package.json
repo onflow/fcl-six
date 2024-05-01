@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-setup-token-vault",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Flow SDK Stored Interaction - Setup Token Vault",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",

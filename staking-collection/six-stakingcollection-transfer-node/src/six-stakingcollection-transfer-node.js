@@ -8,7 +8,7 @@ const DEPS = new Set([
 export const TITLE = "Transfer Node"
 export const DESCRIPTION = "Transfers a Node from one Staking Collection to another."
 export const VERSION = "0.1.0"
-export const HASH = "466783ba26ad0c4efeb794114242dc839325103721a18fec4ef6fbed965e7129"
+export const HASH = "24c7fc07cb811ffc17604453fa40b922b28032dc5bd78cc001c5f94c60dd5f13"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 // Transfers a NodeStaker object from an authorizers account

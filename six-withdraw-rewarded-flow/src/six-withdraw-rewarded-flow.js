@@ -10,7 +10,7 @@ const DEPS = new Set([
 export const TITLE = "Withdraw Rewarded Flow"
 export const DESCRIPTION = "Withdraw Rewarded Flow to an account."
 export const VERSION = "0.1.0"
-export const HASH = "9bb8f0562eea5e45c11f9289540f39c99a21c9a0fb060a7d3f832e98c2696f2d"
+export const HASH = "3f587311734adc2f1da1e1d9cf2d48fa8e0352a14e79942203d6b58c19d58871"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Request to withdraw rewarded tokens for the specified node or delegator in the staking collection

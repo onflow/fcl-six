@@ -8,7 +8,7 @@ const DEPS = new Set([
 export const TITLE = "Transfer Delegator"
 export const DESCRIPTION = "Transfers a delegator from one Staking Collection to another."
 export const VERSION = "0.1.0"
-export const HASH = "ff070fbf6b6b4fdfea5055edb86b3a3bebff95da976816ce1ebb3e8563a53663"
+export const HASH = "95abc4e5446de7b9fc32f43156bd8bf094d654f3abd145a00e02e9906566a6b7"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 // Transfers a NodeDelegator object from an authorizers account

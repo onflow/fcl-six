@@ -10,7 +10,7 @@ const DEPS = new Set([
 export const TITLE = "Setup NFT Collection"
 export const DESCRIPTION = "Sets up an account with an NFT collection."
 export const VERSION = "0.1.0"
-export const HASH = "57380ca4efcc4762ad75534d9a0d123f1be677e401277f407e9585c0def53793"
+export const HASH = "ec16ea7b7647f458e5daeb4dd821ec5affc05ef4c8ff6ac46399d98e5ace253d"
 export const CODE = `/// This transaction is what an account would run
 /// to set itself up to receive NFTs. This function
 /// uses views to know where to set up the collection

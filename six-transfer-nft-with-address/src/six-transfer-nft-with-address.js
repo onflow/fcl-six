@@ -10,7 +10,7 @@ const DEPS = new Set([
 export const TITLE = "Transfer NFT with address"
 export const DESCRIPTION = "Transfers a moment from an authorizer's NFT to another account's."
 export const VERSION = "0.1.0"
-export const HASH = "3bb66424f129bee4605ef2f932ce8c133385beea019518f316bae7a5c34aa7bd"
+export const HASH = "24517c27f986fea9f63c9a0e0f7b585a87f7806e41e556b8255e7db7e3b4c638"
 export const CODE = `import NonFungibleToken from 0xNONFUNGIBLETOKEN
 import MetadataViews from 0xNONFUNGIBLETOKENMETADATAVIEWS
 

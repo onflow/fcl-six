@@ -11,7 +11,7 @@ const DEPS = new Set([
 export const TITLE = "Deposit Unlocked Tokens"
 export const DESCRIPTION = "Deposit Unlocked Tokens."
 export const VERSION = "0.1.0"
-export const HASH = "74355dc8df221bc0d170b2fe8deacd6f1f554d6beea58ad9fee7a07f740eaefe"
+export const HASH = "df011b628a54d2f9d98078f045cbee76089015c3338479b8256e86a4695d444c"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FlowToken from 0xFLOWTOKENADDRESS
 import LockedTokens from 0xLOCKEDTOKENADDRESS

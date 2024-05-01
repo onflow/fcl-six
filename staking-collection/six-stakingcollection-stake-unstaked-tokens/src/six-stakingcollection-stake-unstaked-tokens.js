@@ -8,7 +8,7 @@ const DEPS = new Set([
 export const TITLE = "Stake Unstaked Tokens"
 export const DESCRIPTION = "Stakes unstaked tokens for a stake held in a Staking Collection."
 export const VERSION = "0.1.0"
-export const HASH = "a1a87be7d6db843716e4352217e61a0c64da5a5ad17a739c6e620d8dab327d4d"
+export const HASH = "a9ebc7e1aaaca4dfee1b149f513a43d2547a6eef0630dbce70d165ef58b1467d"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Commits unstaked tokens to stake for the specified node or delegator in the staking collection

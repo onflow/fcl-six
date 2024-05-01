@@ -8,7 +8,7 @@ const DEPS = new Set([
 export const TITLE = "Setup Staking Collection"
 export const DESCRIPTION = "Sets up a Staking Collection for an account."
 export const VERSION = "0.1.0"
-export const HASH = "7a418759877ccbe9dd3a8404fe2eda72c3ab10a95490378232fab3410f735ae8"
+export const HASH = "350cbd85210f7284edd41e9422a31d580f051c74bd1a6c0f697180d2166159a8"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FlowToken from 0xFLOWTOKENADDRESS
 import FlowIDTableStaking from 0xIDENTITYTABLEADDRESS

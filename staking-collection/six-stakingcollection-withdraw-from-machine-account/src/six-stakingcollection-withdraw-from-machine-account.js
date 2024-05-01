@@ -8,7 +8,7 @@ const DEPS = new Set([
 export const TITLE = "Withdraw FLOW from Machine Account"
 export const DESCRIPTION = "Withdraws FLOW from a machine account."
 export const VERSION = "0.1.0"
-export const HASH = "c77ce3a9e3681a64880ec6c4a49b359fa143f25779ca6da46e57febe2f2e1fef"
+export const HASH = "463bc99c4c419c7c05229635242396418379898f73682fcd03bea63ba17e4984"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Request to withdraw tokens from the machine account

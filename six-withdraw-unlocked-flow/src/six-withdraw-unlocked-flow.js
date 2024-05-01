@@ -11,7 +11,7 @@ const DEPS = new Set([
 export const TITLE = "Withdraw Unlocked Tokens"
 export const DESCRIPTION = "Withdraw Unlocked Tokens to an authorizers account."
 export const VERSION = "0.1.0"
-export const HASH = "a2146e3e6e7718779ce59376b88760c154d82b7d132fe2c377114ec7cf434e7b"
+export const HASH = "b32790242e4fd61d1d5953394e234299806bb4ca6190bb87e2fba3ed88787555"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Request to withdraw unstaked tokens for the specified node or delegator in the staking collection

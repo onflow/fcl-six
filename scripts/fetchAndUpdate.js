@@ -88,8 +88,8 @@ async function fetchAndUpdate(searchName, jsFilePath) {
 
       const newHASH = getHash(placeholderContent);
 
-      const hashRegex = /export const HASH =\s*`[^`]*`/gs;
-      updatedContent = replaceContent(hashRegex, updatedContent, `export const HASH = \`${newHASH}\``);
+      const hashRegex = /export const HASH =\s*"[^`]*"/gs;
+      updatedContent = replaceContent(hashRegex, updatedContent, `export const HASH = \"${newHASH}\"`);
 
       // test replacement with actual contract addresses is correct hash
      const backToOriginal = replacePlaceholdersWithAddresses(placeholderContent);
