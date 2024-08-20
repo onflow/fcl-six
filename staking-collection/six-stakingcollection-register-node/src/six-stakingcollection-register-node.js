@@ -89,22 +89,14 @@ const cryptoToRuntimeSigningAlgorithm = (cryptoSigningAlgorithm) => {
     }
 }
 
-export const template = async ({ proposer, authorization, payer, nodeID = "", nodeRole = "", networkingAddress = "", networkingKey = "", stakingKey = "", amount = "", publicKeys = [] }) => {
+export const template = async ({ proposer, authorization, payer, nodeID = "", nodeRole = "", networkingAddress = "", networkingKey = "", stakingKey = "", amount = "", publicKey = "" }) => {
     for (let addr of DEPS) await addressCheck(addr)
 
-    const decodedPublicKeys = (publicKeys || []).map(pk => {
-        const values = decode(`0x${pk}`)
-        return {
-            keyIndex: 0,
-            publicKey: {
-                publicKey: Array.from((values[PUBLIC_KEY].map(v => v))),
-                signatureAlgorithm: cryptoToRuntimeSigningAlgorithm(parseInt(values[SIG_ALGO]?.toString("hex"), 16))
-            },
-            hashAlgorithm: parseInt(values[HASH_ALGO]?.toString("hex"), 16),
-            weight: `${parseInt(values[WEIGHT]?.toString("hex"), 16) + ".0"}`,
-            isRevoked: false
-        }
-    });
+    const pk = fcl.withPrefix(publicKey)
+    const values = publicKey ? decode(`0x${pk}`) : [];
+    const publicKeyValue = values.length > PUBLIC_KEY ? values[PUBLIC_KEY] : "";
+    const signatureAlgorithm = values.length > SIG_ALGO ? cryptoToRuntimeSigningAlgorithm(parseInt(values[SIG_ALGO]?.toString("hex"), 16)) : 1;
+    const hashAlgorithm = values.length > HASH_ALGO ? parseInt(values[HASH_ALGO]?.toString("hex"), 16) : 1;
 
     return fcl.pipe([
         fcl.transaction(CODE),
@@ -115,63 +107,9 @@ export const template = async ({ proposer, authorization, payer, nodeID = "", no
             fcl.arg(networkingKey, t.String),
             fcl.arg(stakingKey, t.String),
             fcl.arg(amount, t.UFix64),
-            fcl.arg(
-                decodedPublicKeys.map((pk) => ({
-                    fields: [
-                        { name: "keyIndex", value: pk.keyIndex },
-                        {
-                            name: "publicKey",
-                            value: {
-                                fields: [
-                                    { name: "publicKey", value: pk.publicKey.publicKey },
-                                    {
-                                        name: "signatureAlgorithm",
-                                        value: {
-                                            fields: [
-                                                { name: "rawValue", value: pk.publicKey.signatureAlgorithm }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                        },
-                        {
-                            name: "hashAlgorithm",
-                            value: {
-                                fields: [
-                                    { name: "rawValue", value: pk.hashAlgorithm }
-                                ]
-                            },
-                        },
-                        { name: "weight", value: pk.weight },
-                        { name: "isRevoked", value: pk.isRevoked },
-                    ],
-                })),
-                t.Optional(
-                    t.Array(
-                        t.Struct("I.Crypto.Crypto.KeyListEntry", [
-                            { value: t.Int },
-                            {
-                                value: t.Struct("PublicKey", [
-                                    { value: t.Array(t.UInt8) },
-                                    {
-                                        value: t.Enum("SignatureAlgorithm", [
-                                            { value: t.UInt8 }
-                                        ])
-                                    },
-                                ]),
-                            },
-                            {
-                                value: t.Enum("HashAlgorithm", [
-                                    { value: t.UInt8 }
-                                ])
-                            },
-                            { value: t.UFix64 },
-                            { value: t.Bool },
-                        ])
-                    )
-                )
-            ),
+            fcl.arg(publicKeyValue, t.String),
+            fcl.arg(signatureAlgorithm, t.UInt8),
+            fcl.arg(hashAlgorithm, t.UInt8),
         ]),
         fcl.proposer(proposer),
         fcl.authorizations([authorization]),
