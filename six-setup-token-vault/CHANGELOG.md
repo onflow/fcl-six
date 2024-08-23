@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.2.0
+
+### Minor Changes
+
+- f4016c3: Ledger cadence v1
+
 ## 0.0.6
 
 ### Patch Changes
