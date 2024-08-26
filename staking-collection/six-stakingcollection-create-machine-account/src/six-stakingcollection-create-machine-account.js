@@ -1,5 +1,6 @@
 import * as fcl from "@onflow/fcl"
 import {t, config} from "@onflow/fcl"
+import { decode } from "@onflow/rlp";
 
 const DEPS = new Set([
     "0xSTAKINGCOLLECTIONADDRESS",
