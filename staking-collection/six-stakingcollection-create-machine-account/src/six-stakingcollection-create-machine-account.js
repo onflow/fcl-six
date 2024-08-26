@@ -1,5 +1,11 @@
 import * as fcl from "@onflow/fcl"
 import {t, config} from "@onflow/fcl"
+import { decode } from "@onflow/rlp";
+
+
+const PUBLIC_KEY = 0;
+const SIG_ALGO = 1;
+const HASH_ALGO = 2;
 
 const DEPS = new Set([
     "0xSTAKINGCOLLECTIONADDRESS",
@@ -57,12 +63,47 @@ const addressCheck = async address => {
     if (!await config().get(address)) throw new UndefinedConfigurationError(address)
 }
 
-export const template = async ({ proposer, authorization, payer, nodeId = "", publicKeys = []}) => {
+
+const cryptoToRuntimeSigningAlgorithm = (cryptoSigningAlgorithm) => {
+    switch (cryptoSigningAlgorithm) {
+      case 1: // crypto.BLSBLS12381
+        return 3; // BLS_BLS12381
+      case 2: // crypto.ECDSAP256
+        return 1; // ECDSA_P256
+      case 3: // crypto.ECDSASecp256k1
+        return 2; // ECDSA_secp256k1
+      default:
+        return 0; // UNKNOWN
+    }
+  };
+
+export const template = async ({ proposer, authorization, payer, nodeId = "", publicKey = ""}) => {
     for (let addr of DEPS) await addressCheck(addr)
+
+        const pk = fcl.withPrefix(publicKey);
+        const values = publicKey ? decode(pk) : [];
+        const machineAccountKey =
+          values.length > PUBLIC_KEY ? values[PUBLIC_KEY]?.toString("hex") : "";
+        const signatureAlgorithm =
+          values.length > SIG_ALGO
+            ? cryptoToRuntimeSigningAlgorithm(
+                parseInt(values[SIG_ALGO]?.toString("hex"), 16)
+              )
+            : 1;
+        const hashAlgorithm =
+          values.length > HASH_ALGO
+            ? parseInt(values[HASH_ALGO]?.toString("hex"), 16)
+            : 1;
+
 
     return fcl.pipe([
         fcl.transaction(CODE),
-        fcl.args([fcl.arg(nodeId, t.String), fcl.arg(publicKeys, t.Array(t.String))]),
+        fcl.args([
+            fcl.arg(nodeID, t.String),
+            fcl.arg(machineAccountKey, t.String),
+            fcl.arg(signatureAlgorithm, t.UInt8),
+            fcl.arg(hashAlgorithm, t.UInt8),
+        ]),
         fcl.proposer(proposer),
         fcl.authorizations([authorization]),
         fcl.payer(payer)
