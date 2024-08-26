@@ -2,6 +2,11 @@ import * as fcl from "@onflow/fcl"
 import {t, config} from "@onflow/fcl"
 import { decode } from "@onflow/rlp";
 
+
+const PUBLIC_KEY = 0;
+const SIG_ALGO = 1;
+const HASH_ALGO = 2;
+
 const DEPS = new Set([
     "0xSTAKINGCOLLECTIONADDRESS",
 ])
