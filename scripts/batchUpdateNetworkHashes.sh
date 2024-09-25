@@ -20,8 +20,8 @@ npm run batchUpdateNetworkHashes "Stake New Tokens" staking-collection/six-staki
 npm run batchUpdateNetworkHashes "Stake Rewarded Tokens" staking-collection/six-stakingcollection-stake-rewarded-tokens/src/six-stakingcollection-stake-rewarded-tokens.js
 npm run batchUpdateNetworkHashes "Stake Unstaked Tokens" staking-collection/six-stakingcollection-stake-unstaked-tokens/src/six-stakingcollection-stake-unstaked-tokens.js
 npm run batchUpdateNetworkHashes "Unstake All" staking-collection/six-stakingcollection-unstake-all/src/six-stakingcollection-unstake-all.js
-npm run batchUpdateNetworkHashes "Withdraw Rewarded Tokens" six-withdraw-rewarded-flow/src/six-withdraw-rewarded-flow.js
-npm run batchUpdateNetworkHashes "Withdraw Unstaked Tokens" six-withdraw-unlocked-flow/src/six-withdraw-unlocked-flow.js
+npm run batchUpdateNetworkHashes "Withdraw Rewarded Tokens" staking-collection/six-stakingcollection-stake-rewarded-tokens/package.json
+npm run batchUpdateNetworkHashes "Withdraw Unstaked Tokens" staking-collection/six-stakingcollection-withdraw-unstaked-tokens/src/six-stakingcollection-withdraw-unstaked-tokens.js
 npm run batchUpdateNetworkHashes "Close Stake" staking-collection/six-stakingcollection-close-stake/src/six-stakingcollection-close-stake.js
 npm run batchUpdateNetworkHashes "Transfer Node" staking-collection/six-stakingcollection-transfer-node/src/six-stakingcollection-transfer-node.js
 npm run batchUpdateNetworkHashes "Transfer Delegator" staking-collection/six-stakingcollection-transfer-delegator/src/six-stakingcollection-transfer-delegator.js
