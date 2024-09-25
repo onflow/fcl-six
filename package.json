@@ -9,7 +9,8 @@
     "build": "lerna run build",
     "changeset": "changeset",
     "release": "npm run build && npm run changeset publish",
-    "fetchAndUpdate": "node ./scripts/fetchAndUpdate.js"
+    "fetchAndUpdate": "node ./scripts/fetchAndUpdate.js",
+    "batchUpdateNetworkHashes": "node ./scripts/fetchAndNetworkHashes.js"
   },
   "dependencies": {
     "@changesets/cli": "^2.26.2"

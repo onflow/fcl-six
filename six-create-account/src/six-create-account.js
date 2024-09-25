@@ -50,3 +50,6 @@ export const template = ({
     fcl.authorizations([authorization]),
     fcl.payer(payer)
 ])
+
+export const MAINNET_HASH = `c4a7efd8708396e8c7a3611f72a9f89f675bf6d5c9336dd389e5839cba78443c`
+export const TESTNET_HASH = `c4a7efd8708396e8c7a3611f72a9f89f675bf6d5c9336dd389e5839cba78443c`

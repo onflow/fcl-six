@@ -136,3 +136,5 @@ export const template = async ({
     fcl.payer(payer),
   ]);
 };
+export const MAINNET_HASH = `3b0b2bbc3a2ad674122c182112f7008a8d3d1b60b107033c0ebe7bbe50df5267`
+export const TESTNET_HASH = `deb5f758f3eb3b125cd9b14a6528f18d535377709fcef41e743751eb82800921`

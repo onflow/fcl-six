@@ -71,3 +71,6 @@ export const template = async ({ proposer, authorization, payer, contractAddress
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `0246076f1cf5d3160397766a9227b35f592f4d15c014848044c509818328b62b`
+export const TESTNET_HASH = `3ccbbfebf10c47c49e4058a33fd9a29c4191c545de52c9afd27a29d38110aa28`
