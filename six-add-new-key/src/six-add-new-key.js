@@ -3,7 +3,7 @@ import * as t from "@onflow/types"
 
 export const TITLE = "Add New Key"
 export const DESCRIPTION = "Add a new key to an Account on Flow."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.2"
 export const HASH = "21d4e87df171ccbe015efe69dc2ffd24814c5fc0f2e364daf5c80515ce4a8bd9"
 export const CODE = `import Crypto
 

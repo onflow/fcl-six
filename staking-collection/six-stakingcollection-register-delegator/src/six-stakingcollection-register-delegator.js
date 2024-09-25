@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Register Delegator"
 export const DESCRIPTION = "Register a delegator held in a Staking Collection."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.2"
 export const HASH = "2923d5e3f490b530cdcf93284460359b9ddc62fe4f6acf2a4bd33d02d394994f"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
