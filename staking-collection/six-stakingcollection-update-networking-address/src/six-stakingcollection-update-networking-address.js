@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Update Networking Adddress"
 export const DESCRIPTION = "Updates the networking address for a node held in a Staking Collection."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.2"
 export const HASH = "ddff7b7fd9908951972200428d15e007b863939e610f7210f7f89099f9477a14"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
@@ -51,3 +51,6 @@ export const template = async ({ proposer, authorization, payer, nodeId = "", ne
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `68d24560d9e49318dca82ab0975f526a8663d934225f0cb715cd1ff188def16d`
+export const TESTNET_HASH = `3a68789d8cd56e6c7b064057045a56340746aac710db57700de2c33eb6610e5f`

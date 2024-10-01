@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-transfer-tokens-with-paths",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Flow SDK Stored Interaction - Transfer Tokens with paths",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
@@ -37,5 +37,8 @@
     "@onflow/config": ">=1.1.0",
     "@onflow/fcl": ">=1.4.0 || >=1.5.0 || >=1.6.0 || >=1.7.0",
     "@onflow/types": ">=1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

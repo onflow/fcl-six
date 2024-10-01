@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Transfer Delegator"
 export const DESCRIPTION = "Transfers a delegator from one Staking Collection to another."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.2"
 export const HASH = "ff070fbf6b6b4fdfea5055edb86b3a3bebff95da976816ce1ebb3e8563a53663"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
@@ -70,3 +70,6 @@ export const template = async ({ proposer, authorization, payer, nodeId = "", de
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `8c7b8460f11ae786c207493eac35deaccb456a31f9df34ddecccad12685c61fc`
+export const TESTNET_HASH = `135df83060f854d487030594e954e9642e4cf6accb5b5abbdf88a9e075468913`

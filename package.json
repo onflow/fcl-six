@@ -9,12 +9,17 @@
     "build": "lerna run build",
     "changeset": "changeset",
     "release": "npm run build && npm run changeset publish",
-    "fetchAndUpdate": "node ./scripts/fetchAndUpdate.js"
+    "fetchAndUpdate": "node ./scripts/fetchAndUpdate.js",
+    "batchUpdateNetworkHashes": "node ./scripts/fetchAndNetworkHashes.js"
   },
   "dependencies": {
-    "@changesets/cli": "^2.26.2"
+    "@changesets/cli": "^2.26.2",
+    "semver": "^7.6.3"
   },
   "devDependencies": {
     "lerna": "^7.1.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
