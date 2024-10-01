@@ -7,7 +7,7 @@ const DEPS = new Set([
 
 export const TITLE = "Stake Unstaked Tokens"
 export const DESCRIPTION = "Stakes unstaked tokens for a stake held in a Staking Collection."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.2"
 export const HASH = "a1a87be7d6db843716e4352217e61a0c64da5a5ad17a739c6e620d8dab327d4d"
 export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
@@ -51,3 +51,6 @@ export const template = async ({ proposer, authorization, payer, nodeId = "", de
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `fe6adb75bf22b2033800e916fa7e3a7810417e9a36d35320de7f4b5f7ec4f1b8`
+export const TESTNET_HASH = `0b1721f2a8ef6c0c4121ef83c7b38f2141eebcd65c72dab9ebaafe1b4d66fea8`

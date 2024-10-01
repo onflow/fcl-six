@@ -8,7 +8,7 @@ const DEPS = new Set([
 
 export const TITLE = "Transfer Tokens with paths"
 export const DESCRIPTION = "Transfer tokens from one account to another."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.1"
 export const HASH = "47851586d962335e3f7d9e5d11a4c527ee4b5fd1c3895e3ce1b9c2821f60b166"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 
@@ -71,3 +71,6 @@ export const template = async ({ proposer, authorization, payer, amount = "", to
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `6e5b8c83a3e8445eaa4bed391978443f124d9aa457fabdbaa016e0f65b57591e`
+export const TESTNET_HASH = `c9b9a6156280812703c15dde74df95cd0d7d1034dd2d8bf0cccf72b607142988`

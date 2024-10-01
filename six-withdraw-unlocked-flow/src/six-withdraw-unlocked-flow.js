@@ -10,25 +10,27 @@ const DEPS = new Set([
 
 export const TITLE = "Withdraw Unlocked Tokens"
 export const DESCRIPTION = "Withdraw Unlocked Tokens to an authorizers account."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.3"
 export const HASH = "a2146e3e6e7718779ce59376b88760c154d82b7d132fe2c377114ec7cf434e7b"
-export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
+import FlowToken from 0xFLOWTOKENADDRESS
+import LockedTokens from 0xLOCKEDTOKENADDRESS
 
-/// Request to withdraw unstaked tokens for the specified node or delegator in the staking collection
-/// The tokens are automatically deposited to the unlocked account vault first,
-/// And then any locked tokens are deposited into the locked account vault if it is there
+transaction(amount: UFix64) {
 
-transaction(nodeID: String, delegatorID: UInt32?, amount: UFix64) {
-    
-    let stakingCollectionRef: auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection
+    let holderRef: auth(LockedTokens.TokenOperations, FungibleToken.Withdraw) &LockedTokens.TokenHolder
+    let vaultRef: auth(FungibleToken.Withdraw) &FlowToken.Vault
 
-    prepare(account: auth(BorrowValue) &Account) {
-        self.stakingCollectionRef = account.storage.borrow<auth(FlowStakingCollection.CollectionOwner) &FlowStakingCollection.StakingCollection>(from: FlowStakingCollection.StakingCollectionStoragePath)
-            ?? panic("Could not borrow a reference to a StakingCollection in the primary user's account")
+    prepare(acct: auth(BorrowValue) &Account) {
+        self.holderRef = acct.storage.borrow<auth(LockedTokens.TokenOperations, FungibleToken.Withdraw) &LockedTokens.TokenHolder>(from: LockedTokens.TokenHolderStoragePath)
+            ?? panic("The primary user account does not have an associated locked account")
+
+        self.vaultRef = acct.storage.borrow<auth(FungibleToken.Withdraw) &FlowToken.Vault>(from: /storage/flowTokenVault)
+            ?? panic("Could not borrow flow token vault ref")
     }
 
     execute {
-        self.stakingCollectionRef.withdrawUnstakedTokens(nodeID: nodeID, delegatorID: delegatorID, amount: amount)
+        self.vaultRef.deposit(from: <-self.holderRef.withdraw(amount: amount))
     }
 }
 `
@@ -56,3 +58,6 @@ export const template = async ({ proposer, authorization, payer, amount = ""}) =
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `c2484f17e640e285769c3edaa6f2d090dcef1f2f57983f82b7179c3c047290ca`
+export const TESTNET_HASH = `01fd4ea83d20510d24ed9f245873a7ee2715aefb774495c80bce7e3e34d6442e`

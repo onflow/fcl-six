@@ -11,7 +11,7 @@ const DEPS = new Set(["0xSTAKINGCOLLECTIONADDRESS"]);
 
 export const TITLE = "Register Node";
 export const DESCRIPTION = "Register a node held in a Staking Collection.";
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.5";
 export const HASH =
   "888e40ddf906f8194d6fe2d7675db4fb0e7c1d87a9b4796df4df68ca0559601e";
 export const CODE = `import Crypto
@@ -77,42 +77,64 @@ const addressCheck = async (address) => {
 
 
 const cryptoToRuntimeSigningAlgorithm = (cryptoSigningAlgorithm) => {
-    switch (cryptoSigningAlgorithm) {
-        case 1: // crypto.BLSBLS12381
-            return 3; // BLS_BLS12381
-        case 2: // crypto.ECDSAP256
-            return 1; // ECDSA_P256
-        case 3: // crypto.ECDSASecp256k1
-            return 2; // ECDSA_secp256k1
-        default:
-            return 0; // UNKNOWN
-    }
-}
-
-export const template = async ({ proposer, authorization, payer, nodeID = "", nodeRole = "", networkingAddress = "", networkingKey = "", stakingKey = "", amount = "", publicKey = "" }) => {
-    for (let addr of DEPS) await addressCheck(addr)
-
-    const pk = fcl.withPrefix(publicKey)
-    const values = publicKey ? decode(`0x${pk}`) : [];
-    const publicKeyValue = values.length > PUBLIC_KEY ? values[PUBLIC_KEY] : "";
-    const signatureAlgorithm = values.length > SIG_ALGO ? cryptoToRuntimeSigningAlgorithm(parseInt(values[SIG_ALGO]?.toString("hex"), 16)) : 1;
-    const hashAlgorithm = values.length > HASH_ALGO ? parseInt(values[HASH_ALGO]?.toString("hex"), 16) : 1;
-
-    return fcl.pipe([
-        fcl.transaction(CODE),
-        fcl.args([
-            fcl.arg(nodeID, t.String),
-            fcl.arg(nodeRole, t.UInt8),
-            fcl.arg(networkingAddress, t.String),
-            fcl.arg(networkingKey, t.String),
-            fcl.arg(stakingKey, t.String),
-            fcl.arg(amount, t.UFix64),
-            fcl.arg(publicKeyValue, t.String),
-            fcl.arg(signatureAlgorithm, t.UInt8),
-            fcl.arg(hashAlgorithm, t.UInt8),
-        ]),
-        fcl.proposer(proposer),
-        fcl.authorizations([authorization]),
-        fcl.payer(payer),
-    ]);
+  switch (cryptoSigningAlgorithm) {
+    case 1: // crypto.BLSBLS12381
+      return 3; // BLS_BLS12381
+    case 2: // crypto.ECDSAP256
+      return 1; // ECDSA_P256
+    case 3: // crypto.ECDSASecp256k1
+      return 2; // ECDSA_secp256k1
+    default:
+      return 0; // UNKNOWN
+  }
 };
+
+export const template = async ({
+  proposer,
+  authorization,
+  payer,
+  nodeID = "",
+  nodeRole = "",
+  networkingAddress = "",
+  networkingKey = "",
+  stakingKey = "",
+  amount = "",
+  publicKey = "",
+}) => {
+  for (let addr of DEPS) await addressCheck(addr);
+
+  const pk = fcl.withPrefix(publicKey);
+  const values = publicKey ? decode(pk) : [];
+  const machineAccountKey =
+    values.length > PUBLIC_KEY ? values[PUBLIC_KEY]?.toString("hex") : "";
+  const signatureAlgorithm =
+    values.length > SIG_ALGO
+      ? cryptoToRuntimeSigningAlgorithm(
+          parseInt(values[SIG_ALGO]?.toString("hex"), 16)
+        )
+      : 1;
+  const hashAlgorithm =
+    values.length > HASH_ALGO
+      ? parseInt(values[HASH_ALGO]?.toString("hex"), 16)
+      : 1;
+
+  return fcl.pipe([
+    fcl.transaction(CODE),
+    fcl.args([
+      fcl.arg(nodeID, t.String),
+      fcl.arg(nodeRole, t.UInt8),
+      fcl.arg(networkingAddress, t.String),
+      fcl.arg(networkingKey, t.String),
+      fcl.arg(stakingKey, t.String),
+      fcl.arg(amount, t.UFix64),
+      fcl.arg(machineAccountKey, t.String),
+      fcl.arg(signatureAlgorithm, t.UInt8),
+      fcl.arg(hashAlgorithm, t.UInt8),
+    ]),
+    fcl.proposer(proposer),
+    fcl.authorizations([authorization]),
+    fcl.payer(payer),
+  ]);
+};
+export const MAINNET_HASH = `3b0b2bbc3a2ad674122c182112f7008a8d3d1b60b107033c0ebe7bbe50df5267`
+export const TESTNET_HASH = `deb5f758f3eb3b125cd9b14a6528f18d535377709fcef41e743751eb82800921`

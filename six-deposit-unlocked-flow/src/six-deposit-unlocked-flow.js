@@ -10,7 +10,7 @@ const DEPS = new Set([
 
 export const TITLE = "Deposit Unlocked Tokens"
 export const DESCRIPTION = "Deposit Unlocked Tokens."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.1"
 export const HASH = "74355dc8df221bc0d170b2fe8deacd6f1f554d6beea58ad9fee7a07f740eaefe"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FlowToken from 0xFLOWTOKENADDRESS
@@ -58,3 +58,6 @@ export const template = async ({ proposer, authorization, payer, amount = ""}) =
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `038382a947fa96bf2f4dfe5aa9b4b2abee1ef0975955175e80cf911c3edf4b61`
+export const TESTNET_HASH = `17ffcd60667893674d8d4044bdd8232959dc8b694df1dd88d1b9c5443352f253`

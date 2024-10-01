@@ -8,7 +8,7 @@ const DEPS = new Set([
 
 export const TITLE = "Setup Token Vault"
 export const DESCRIPTION = "Set up a Vault and Receiver for an account."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.1"
 export const HASH = "887673892a2e2c12337394570dfa30c5669e93f537ae426690f402799514a9a1"
 export const CODE = `import FungibleToken from 0xFUNGIBLETOKENADDRESS
 import FungibleTokenMetadataViews from 0xFUNGIBLETOKENMETADATAVIEWS
@@ -71,3 +71,6 @@ export const template = async ({ proposer, authorization, payer, contractAddress
         fcl.payer(payer)
     ])
 }
+
+export const MAINNET_HASH = `0246076f1cf5d3160397766a9227b35f592f4d15c014848044c509818328b62b`
+export const TESTNET_HASH = `3ccbbfebf10c47c49e4058a33fd9a29c4191c545de52c9afd27a29d38110aa28`

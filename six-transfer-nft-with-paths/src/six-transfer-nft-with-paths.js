@@ -9,7 +9,7 @@ const DEPS = new Set([
 
 export const TITLE = "NBA Top Shot Transfer Moment"
 export const DESCRIPTION = "Transfers a moment from an authorizer's NBA Top Shot collection to another account's."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.1"
 export const HASH = "3bb66424f129bee4605ef2f932ce8c133385beea019518f316bae7a5c34aa7bd"
 export const CODE = `import NonFungibleToken from 0xNONFUNGIBLETOKEN
 
@@ -76,3 +76,6 @@ export const template = async ({ proposer, authorization, payer, senderPathIdent
     fcl.payer(payer)
   ])
 }
+
+export const MAINNET_HASH = `2cb2cd6408a35f08b4f9b13e6e6b44d5325eb78a7a1eebb0e790ee285bdd1365`
+export const TESTNET_HASH = `db0518029ca76e6f2d8ec1517768b1d395523e87d11a4297197f98b53dc9cc2d`

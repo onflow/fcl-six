@@ -9,7 +9,7 @@ const DEPS = new Set([
 
 export const TITLE = "Setup NFT Collection"
 export const DESCRIPTION = "Sets up an account with an NFT collection."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.1"
 export const HASH = "57380ca4efcc4762ad75534d9a0d123f1be677e401277f407e9585c0def53793"
 export const CODE = `/// This transaction is what an account would run
 /// to set itself up to receive NFTs. This function
@@ -69,3 +69,6 @@ export const template = async ({ proposer, authorization, payer, contractAddress
     fcl.payer(payer)
   ])
 }
+
+export const MAINNET_HASH = `a25e07dea5eb608387d3766fd6ce0110491599a6d61a5e7e9afddd19a7e76611`
+export const TESTNET_HASH = `54fae25bb09f5a324821b644890acbc5a356bcbe821218edeb18bd3042dcd333`

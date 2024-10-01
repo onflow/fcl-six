@@ -3,7 +3,7 @@ import * as t from "@onflow/types"
 
 export const TITLE = "Add New Key"
 export const DESCRIPTION = "Add a new key to an Account on Flow."
-export const VERSION = "0.1.0"
+export const VERSION = "0.2.2"
 export const HASH = "21d4e87df171ccbe015efe69dc2ffd24814c5fc0f2e364daf5c80515ce4a8bd9"
 export const CODE = `import Crypto
 
@@ -48,3 +48,6 @@ export const template = ({
     fcl.authorizations([authorization]),
     fcl.payer(payer)
 ])
+
+export const MAINNET_HASH = `1c9d1210f2bf129b86803b153e137420c9117e8a2409a1e2ef6f916a4e8d611f`
+export const TESTNET_HASH = `1c9d1210f2bf129b86803b153e137420c9117e8a2409a1e2ef6f916a4e8d611f`
