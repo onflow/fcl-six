@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-remove-key",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Flow SDK Stored Interaction - Remove Key",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
@@ -24,9 +24,9 @@
   },
   "type": "module",
   "source": "src/six-remove-key.js",
-  "main": "dist/six-remove.key.js",
-  "module": "dist/six-remove.key.module.js",
-  "unpkg": "dist/six-remove.key.umd.js",
+  "main": "dist/six-remove-key.js",
+  "module": "dist/six-remove-key.module.js",
+  "unpkg": "dist/six-remove-key.umd.js",
   "scripts": {
     "prepublishOnly": "npm test && npm run build",
     "test": "jest",
