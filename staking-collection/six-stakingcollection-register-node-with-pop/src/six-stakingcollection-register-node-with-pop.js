@@ -11,7 +11,7 @@ const DEPS = new Set(["0xSTAKINGCOLLECTIONADDRESS"]);
 
 export const TITLE = "Register Node with Pop";
 export const DESCRIPTION = "Register a node held in a Staking Collection with proof of possession.";
-export const VERSION = "0.1.1";
+export const VERSION = "0.1.2";
 export const HASH =
   "df77422a20db56be7b6a4aea1282d5a53ea9a6509a6fcf653722229890cc8904";
 export const CODE = `import Crypto
@@ -151,5 +151,5 @@ export const template = async ({
     fcl.payer(payer),
   ]);
 };
-export const MAINNET_HASH = `3b0b2bbc3a2ad674122c182112f7008a8d3d1b60b107033c0ebe7bbe50df5267`
-export const TESTNET_HASH = `deb5f758f3eb3b125cd9b14a6528f18d535377709fcef41e743751eb82800921`
+export const MAINNET_HASH = `88bdc9bb28ce734d1edc4b64ae5adf99ff3ac572dbe0d09090795bf78c7c31a6`
+export const TESTNET_HASH = `15face232abba7795997f06ec6f07a4e7d14743e6ed4f33d9e26ad02017b917f`
