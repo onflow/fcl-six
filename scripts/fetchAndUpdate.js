@@ -10,7 +10,8 @@ if (!searchName || !jsFilePath) {
   process.exit(1);
 }
 
-const url = 'https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.mainnet.json';
+//const url = 'https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.mainnet.json';
+const url = 'https://raw.githubusercontent.com/onflow/flow-core-contracts/refs/heads/josh/proof-of-possesion/lib/go/templates/manifest.mainnet.json';
 
 function replaceAddressesWithPlaceholders(content) {
     let regex = /(import FlowStakingCollection from )0x[a-fA-F0-9]+/;
@@ -62,7 +63,8 @@ async function fetchAndUpdate(searchName, jsFilePath) {
   try {
     const response = await axios.get(url);
     let data = response.data?.templates;
-    
+   
+    data.map(x => console.log(`${x.name} ${x.hash}`));
     // Assuming the JSON data is now in an array format, find the item
     const item = Array.isArray(data) ? data.find(item => item.name === searchName) : null;
 
