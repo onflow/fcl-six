@@ -9,11 +9,11 @@ const WEIGHT = 3;
 
 const DEPS = new Set(["0xSTAKINGCOLLECTIONADDRESS"]);
 
-export const TITLE = "Register Node";
-export const DESCRIPTION = "Register a node held in a Staking Collection.";
-export const VERSION = "0.1.5";
+export const TITLE = "Register Node with Pop";
+export const DESCRIPTION = "Register a node held in a Staking Collection with proof of possession.";
+export const VERSION = "0.1.2";
 export const HASH =
-  "888e40ddf906f8194d6fe2d7675db4fb0e7c1d87a9b4796df4df68ca0559601e";
+  "df77422a20db56be7b6a4aea1282d5a53ea9a6509a6fcf653722229890cc8904";
 export const CODE = `import Crypto
 import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
@@ -25,6 +25,7 @@ transaction(id: String,
             networkingAddress: String,
             networkingKey: String,
             stakingKey: String,
+            stakingKeyPoP: String,
             amount: UFix64,
             machineAccountKey: String, 
             machineAccountKeySignatureAlgorithm: UInt8, 
@@ -42,6 +43,7 @@ transaction(id: String,
             networkingAddress: networkingAddress,
             networkingKey: networkingKey,
             stakingKey: stakingKey,
+            stakingKeyPoP: stakingKeyPoP,
             amount: amount,
             payer: account
         ) {
@@ -98,6 +100,7 @@ export const template = async ({
   networkingAddress = "",
   networkingKey = "",
   stakingKey = "",
+  stakingKeyPoP = "",
   amount = "",
   publicKey = "",
 }) => {
@@ -126,6 +129,7 @@ export const template = async ({
       fcl.arg(networkingAddress, t.String),
       fcl.arg(networkingKey, t.String),
       fcl.arg(stakingKey, t.String),
+      fcl.arg(stakingKeyPoP, t.String),
       fcl.arg(amount, t.UFix64),
       fcl.arg(machineAccountKey, t.String),
       fcl.arg(signatureAlgorithm, t.UInt8),
@@ -136,5 +140,5 @@ export const template = async ({
     fcl.payer(payer),
   ]);
 };
-export const MAINNET_HASH = `3b0b2bbc3a2ad674122c182112f7008a8d3d1b60b107033c0ebe7bbe50df5267`
-export const TESTNET_HASH = `deb5f758f3eb3b125cd9b14a6528f18d535377709fcef41e743751eb82800921`
+export const MAINNET_HASH = `e258e97fcd307df2bfd56a9eff46db8bdb9ad15ff8f36fc2667d13f8b5e45873`
+export const TESTNET_HASH = `82ddf501939f1bb2a99b0850babb1cd7dd46a8d62d50e78c04f4e3980f31befd`

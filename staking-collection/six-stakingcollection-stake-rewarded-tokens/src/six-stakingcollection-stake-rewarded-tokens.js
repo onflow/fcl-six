@@ -52,5 +52,5 @@ export const template = async ({ proposer, authorization, payer, nodeId = "", de
     ])
 }
 
-export const MAINNET_HASH = `fbd8ebbfff7a88b6b667ff4e3f9f904eaaba71cbf02a140f3b7007c61fbd8f34`
-export const TESTNET_HASH = `5a07ca4c016973bdeb168590e111b2c2855833b5ece11ffb28b08b8668f258a8`
+export const MAINNET_HASH = `c989e8b3beb9c2eb5af2ee1e11d592c9f1131e76e7ef105a0d40cf1610d1e348`
+export const TESTNET_HASH = `4395faf2e515eea4d40f82416ad387575f0d5a580612223c361130e53e72f00b`
