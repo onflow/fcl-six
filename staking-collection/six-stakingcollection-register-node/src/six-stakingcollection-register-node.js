@@ -11,7 +11,7 @@ const DEPS = new Set(["0xSTAKINGCOLLECTIONADDRESS"]);
 
 export const TITLE = "Register Node with Pop";
 export const DESCRIPTION = "Register a node held in a Staking Collection with proof of possession.";
-export const VERSION = "0.1.2";
+export const VERSION = "0.3.1";
 export const HASH =
   "df77422a20db56be7b6a4aea1282d5a53ea9a6509a6fcf653722229890cc8904";
 export const CODE = `import Crypto
