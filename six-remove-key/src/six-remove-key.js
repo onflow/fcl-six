@@ -3,7 +3,7 @@ import * as t from "@onflow/types"
 
 export const TITLE = "Remove Key"
 export const DESCRIPTION = "Remove key from Account on Flow."
-export const VERSION = "0.2.2"
+export const VERSION = "0.2.3"
 export const HASH = "21d4e87df171ccbe015efe69dc2ffd24814c5fc0f2e364daf5c80515ce4a8bd9"
 export const CODE = `transaction(keyIndex: Int) {
 	prepare(signer: auth(RevokeKey) &Account) {
