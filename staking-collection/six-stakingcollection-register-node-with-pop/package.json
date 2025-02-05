@@ -1,7 +1,7 @@
 {
-  "name": "@onflow/six-stakingcollection-register-node",
-  "version": "0.3.2",
-  "description": "Flow SDK Stored Interaction - Registers a Node held in Staking Collection",
+  "name": "@onflow/six-stakingcollection-register-node-with-pop",
+  "version": "0.3.1",
+  "description": "Flow SDK Stored Interaction - Registers a Node held in Staking Collection with proof of possession",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
   "homepage": "https://onflow.org",

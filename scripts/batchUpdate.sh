@@ -13,7 +13,8 @@ npm run fetchAndUpdate "Withdraw Unlocked FLOW" six-withdraw-unlocked-flow/src/s
 npm run fetchAndUpdate "Deposit Unlocked FLOW" six-deposit-unlocked-flow/src/six-deposit-unlocked-flow.js
 npm run fetchAndUpdate "Setup Staking Collection" staking-collection/six-stakingcollection-setup-staking-collection/src/six-stakingcollection-setup-staking-collection.js
 npm run fetchAndUpdate "Register Delegator" staking-collection/six-stakingcollection-register-delegator/src/six-stakingcollection-register-delegator.js
-npm run fetchAndUpdate "Register Node" staking-collection/six-stakingcollection-register-node/src/six-stakingcollection-register-node.js SCO.17
+npm run fetchAndUpdate "Register Node" staking-collection/six-stakingcollection-register-node/src/six-stakingcollection-register-node.js SCO.03
+npm run fetchAndUpdate "Register Node with PoP" staking-collection/six-stakingcollection-register-node-with-pop/src/six-stakingcollection-register-node-with-pop.js SCO.17
 npm run fetchAndUpdate "Create Machine Account" staking-collection/six-stakingcollection-create-machine-account/src/six-stakingcollection-create-machine-account.js
 npm run fetchAndUpdate "Request Unstaking" staking-collection/six-stakingcollection-request-unstaking/src/six-stakingcollection-request-unstaking.js
 npm run fetchAndUpdate "Stake New Tokens" staking-collection/six-stakingcollection-stake-new-tokens/src/six-stakingcollection-stake-new-tokens.js

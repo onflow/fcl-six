@@ -13,7 +13,8 @@ npm run batchUpdateNetworkHashes "Withdraw Unlocked FLOW" six-withdraw-unlocked-
 npm run batchUpdateNetworkHashes "Deposit Unlocked FLOW" six-deposit-unlocked-flow/src/six-deposit-unlocked-flow.js
 npm run batchUpdateNetworkHashes "Setup Staking Collection" staking-collection/six-stakingcollection-setup-staking-collection/src/six-stakingcollection-setup-staking-collection.js
 npm run batchUpdateNetworkHashes "Register Delegator" staking-collection/six-stakingcollection-register-delegator/src/six-stakingcollection-register-delegator.js
-npm run batchUpdateNetworkHashes "Register Node" staking-collection/six-stakingcollection-register-node/src/six-stakingcollection-register-node.js SCO.17
+npm run batchUpdateNetworkHashes "Register Node" staking-collection/six-stakingcollection-register-node/src/six-stakingcollection-register-node.js SCO.03
+npm run batchUpdateNetworkHashes "Register Node with PoP" staking-collection/six-stakingcollection-register-node-with-pop/src/six-stakingcollection-register-node-with-pop.js SCO.17
 npm run batchUpdateNetworkHashes "Create Machine Account" staking-collection/six-stakingcollection-create-machine-account/src/six-stakingcollection-create-machine-account.js
 npm run batchUpdateNetworkHashes "Request Unstaking" staking-collection/six-stakingcollection-request-unstaking/src/six-stakingcollection-request-unstaking.js
 npm run batchUpdateNetworkHashes "Stake New Tokens" staking-collection/six-stakingcollection-stake-new-tokens/src/six-stakingcollection-stake-new-tokens.js
