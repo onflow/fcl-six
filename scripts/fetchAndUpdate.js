@@ -3,14 +3,16 @@ const axios = require('axios');
 const crypto = require('crypto');
 
 // Command line arguments
-const [searchName, jsFilePath] = process.argv.slice(2);
+const [searchName, jsFilePath, id = null] = process.argv.slice(2);
 
 if (!searchName || !jsFilePath) {
-  console.log('Usage: node script.js <searchName> <pathToJsFile>');
+  console.log('Usage: node script.js <searchName> <pathToJsFile> [id]');
   process.exit(1);
 }
 
-const url = 'https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.mainnet.json';
+//const url = 'https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.mainnet.json';
+//const url = 'https://raw.githubusercontent.com/onflow/flow-core-contracts/refs/heads/josh/proof-of-possesion/lib/go/templates/manifest.mainnet.json';
+const url = 'https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/tarak/develop-pop/transaction_metadata/manifest.mainnet.json';
 
 function replaceAddressesWithPlaceholders(content) {
     let regex = /(import FlowStakingCollection from )0x[a-fA-F0-9]+/;
@@ -58,20 +60,22 @@ function replaceContent(exp, content, replacement) {
     return content.replace(exp, replacement);
 }
 
-async function fetchAndUpdate(searchName, jsFilePath) {
+async function fetchAndUpdate(searchName, jsFilePath, id = null) {
   try {
     const response = await axios.get(url);
     let data = response.data?.templates;
-    
-    // Assuming the JSON data is now in an array format, find the item
-    const item = Array.isArray(data) ? data.find(item => item.name === searchName) : null;
+   
+    data.map(x => console.log(`${x.name} ${x.hash}`));
+    // Modified item search to use id if provided, otherwise use searchName
+    const item = Array.isArray(data) 
+      ? data.find(item => id ? item.id === id : item.name === searchName) 
+      : null;
 
-    //data.map(x => console.log(`npm run fetchAndUpdate "${x.name}" `));
     const sourceCode = item?.source;
     const sourceHash = item?.hash;
 
     if (!sourceCode) {
-      console.error(`${searchName} not found.`);
+      console.error(`${id ? `ID ${id}` : searchName} not found.`);
       return;
     }
 
@@ -112,4 +116,4 @@ async function fetchAndUpdate(searchName, jsFilePath) {
   }
 }
 
-fetchAndUpdate(searchName, jsFilePath);
+fetchAndUpdate(searchName, jsFilePath, id);

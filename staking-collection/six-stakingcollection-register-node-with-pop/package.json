@@ -1,10 +1,11 @@
 {
-  "name": "@onflow/six-transfer-tokens-with-address",
-  "version": "0.2.3",
-  "description": "Flow SDK Stored Interaction - Transfer Tokens with address",
+  "name": "@onflow/six-stakingcollection-register-node-with-pop",
+  "version": "0.3.1",
+  "description": "Flow SDK Stored Interaction - Registers a Node held in Staking Collection with proof of possession",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
   "homepage": "https://onflow.org",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/onflow/fcl-six.git"
@@ -22,10 +23,10 @@
     "jest-esm-transformer": "1.0.0",
     "microbundle": "0.12.0-next.8"
   },
-  "source": "src/six-transfer-tokens-with-address.js",
-  "main": "dist/six-transfer-tokens-with-address.js",
-  "module": "dist/six-transfer-tokens-with-address.module.js",
-  "unpkg": "dist/six-transfer-tokens-with-address.umd.js",
+  "source": "src/six-stakingcollection-register-node.js",
+  "main": "dist/six-stakingcollection-register-node.js",
+  "module": "dist/six-stakingcollection-register-node.module.js",
+  "unpkg": "dist/six-stakingcollection-register-node.umd.js",
   "scripts": {
     "prepublishOnly": "npm test && npm run build",
     "test": "jest",
@@ -34,9 +35,8 @@
     "start": "microbundle watch"
   },
   "peerDependencies": {
-    "@onflow/config": ">=1.1.0",
     "@onflow/fcl": ">=1.4.0 || >=1.5.0 || >=1.6.0 || >=1.7.0",
-    "@onflow/types": ">=1.1.0"
+    "@onflow/rlp": ">=1.1.0"
   },
   "publishConfig": {
     "access": "public"

@@ -11,15 +11,19 @@ if (!searchName || !jsFilePath) {
 }
 
 const urls = [
-  "https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.mainnet.json",
-  "https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.testnet.json",
+//  "https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.mainnet.json",
+//  "https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.testnet.json",
+//  "https://raw.githubusercontent.com/onflow/flow-core-contracts/refs/heads/josh/proof-of-possesion/lib/go/templates/manifest.mainnet.json",
+//  "https://raw.githubusercontent.com/onflow/flow-core-contracts/refs/heads/josh/proof-of-possesion/lib/go/templates/manifest.testnet.json"
+"https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/tarak/develop-pop/transaction_metadata/manifest.mainnet.json",
+"https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/tarak/develop-pop/transaction_metadata/manifest.testnet.json"
 ];
 
 function replaceContent(exp, content, replacement) {
   return content.replace(exp, replacement);
 }
 
-async function fetchAndUpdate(searchName, jsFilePath) {
+async function fetchAndUpdate(searchName, jsFilePath, id = null) {
   try {
     let content = await fs.promises.readFile(jsFilePath, "utf8");
 
@@ -28,14 +32,14 @@ async function fetchAndUpdate(searchName, jsFilePath) {
       let data = response.data?.templates;
 
       const item = Array.isArray(data)
-        ? data.find((item) => item.name === searchName)
+        ? data.find((item) => id ? item.id === id : item.name === searchName)
         : null;
       const sourceHash = item?.hash;
       const network = item?.network?.toUpperCase();
 
       if (!sourceHash || !network) {
         console.error(
-          `${searchName} not found or network undefined for URL: ${url}`
+          `${id ? `ID ${id}` : searchName} not found or network undefined for URL: ${url}`
         );
         continue;
       }
@@ -65,4 +69,5 @@ async function fetchAndUpdate(searchName, jsFilePath) {
   }
 }
 
-fetchAndUpdate(searchName, jsFilePath);
+const id = process.argv[4] || null; // Get optional id from command line arguments
+fetchAndUpdate(searchName, jsFilePath, id);
