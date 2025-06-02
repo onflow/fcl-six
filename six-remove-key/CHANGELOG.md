@@ -1,5 +1,11 @@
 ### Unreleased
 
+## 0.2.4
+
+### Patch Changes
+
+- 5ec7ea8: Updated to add network specific transaction hash for ledger verification
+
 ## 0.2.0
 
 ### Minor Changes
