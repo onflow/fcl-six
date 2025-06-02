@@ -1,6 +1,6 @@
 {
   "name": "@onflow/six-remove-key",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Flow SDK Stored Interaction - Remove Key",
   "license": "Apache-2.0",
   "author": "Dapper Labs <dev@dapperlabs.com>",
