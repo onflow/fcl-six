@@ -9,7 +9,7 @@ const WEIGHT = 3;
 
 const DEPS = new Set(["0xSTAKINGCOLLECTIONADDRESS"]);
 
-export const TITLE = "Register Node with Pop";
+export const TITLE = "Register Node with PoP";
 export const DESCRIPTION = "Register a node held in a Staking Collection with proof of possession.";
 export const VERSION = "0.3.1";
 export const HASH =
