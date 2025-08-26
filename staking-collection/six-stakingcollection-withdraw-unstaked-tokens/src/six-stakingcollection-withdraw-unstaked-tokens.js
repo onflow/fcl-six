@@ -7,10 +7,9 @@ const DEPS = new Set([
 
 export const TITLE = "Withdraw Unstaked Tokens"
 export const DESCRIPTION = "Withdraws unstaked tokens from a stake held in a Staking Collection."
-export const VERSION = "0.2.1"
+export const VERSION = "0.3.0"
 export const HASH = "b32790242e4fd61d1d5953394e234299806bb4ca6190bb87e2fba3ed88787555"
-export const CODE = 
-`import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
+export const CODE = `import FlowStakingCollection from 0xSTAKINGCOLLECTIONADDRESS
 
 /// Request to withdraw unstaked tokens for the specified node or delegator in the staking collection
 /// The tokens are automatically deposited to the unlocked account vault first,

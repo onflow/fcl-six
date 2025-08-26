@@ -15,8 +15,8 @@ const urls = [
 //  "https://raw.githubusercontent.com/vacuumlabs/app-flow/v_0_12_0_for_integration/transaction_metadata/manifest.testnet.json",
 //  "https://raw.githubusercontent.com/onflow/flow-core-contracts/refs/heads/josh/proof-of-possesion/lib/go/templates/manifest.mainnet.json",
 //  "https://raw.githubusercontent.com/onflow/flow-core-contracts/refs/heads/josh/proof-of-possesion/lib/go/templates/manifest.testnet.json"
-"https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/tarak/develop-pop/transaction_metadata/manifest.mainnet.json",
-"https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/tarak/develop-pop/transaction_metadata/manifest.testnet.json"
+"https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/develop/transaction_metadata/manifest.mainnet.json",
+"https://raw.githubusercontent.com/onflow/ledger-app-flow/refs/heads/develop/transaction_metadata/manifest.testnet.json"
 ];
 
 function replaceContent(exp, content, replacement) {
